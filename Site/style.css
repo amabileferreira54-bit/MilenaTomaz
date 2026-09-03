@@ -1,0 +1,6811 @@
+/*=========================================================
+PSICÓLOGA MILENA TOMAZ
+STYLE.CSS
+VERSÃO ORGÂNICA / BOTÂNICA
+=========================================================*/
+
+
+/*=========================================================
+RESET
+=========================================================*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: var(--white);
+    color: var(--text);
+    line-height: 1.7;
+    overflow-x: hidden;
+}
+
+img {
+    display: block;
+    width: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+
+/*=========================================================
+VARIÁVEIS
+=========================================================*/
+
+:root {
+
+    /* FUNDOS */
+
+    --linho: #F4EFE8;
+    --aveia: #E8E0D3;
+    --white: #FCFBF8;
+
+
+    /* VERDES */
+
+    --olive: #7B7F59;
+    --forest: #4A5A49;
+    --green-soft: #DDE2D5;
+
+
+    /* CORES DE DESTAQUE */
+
+    --terracotta: #B86E55;
+    --terracotta-light: #E8CEC4;
+
+    --ocre: #C5A35A;
+    --ocre-light: #E9DEC3;
+
+
+    /* MARROM */
+
+    --brown: #6E5E4D;
+
+
+    /* TEXTO */
+
+    --text: #43413D;
+
+
+    /* SOMBRAS */
+
+    --shadow: 0 20px 45px rgba(74, 90, 73, .10);
+
+    --shadow-hover: 0 30px 65px rgba(74, 90, 73, .16);
+
+
+    /* ESTRUTURA */
+
+    --radius: 22px;
+
+    --transition: .35s ease;
+
+    --container: 1200px;
+
+}
+
+
+/*=========================================================
+TIPOGRAFIA
+=========================================================*/
+
+h1,
+h2,
+h3,
+h4 {
+
+    font-family: 'Cormorant Garamond', serif;
+
+    color: var(--forest);
+
+    line-height: 1.2;
+
+    font-weight: 600;
+
+}
+
+h1 {
+
+    font-size: 4.8rem;
+
+}
+
+h2 {
+
+    font-size: 3rem;
+
+}
+
+h3 {
+
+    font-size: 1.8rem;
+
+}
+
+p {
+
+    color: var(--text);
+
+}
+
+
+/*=========================================================
+TÍTULOS DAS SEÇÕES
+=========================================================*/
+
+.section-title {
+
+    text-align: center;
+
+    margin-bottom: 80px;
+
+    position: relative;
+
+    z-index: 2;
+
+}
+
+.section-title span {
+
+    display: inline-block;
+
+    color: var(--terracotta);
+
+    text-transform: uppercase;
+
+    letter-spacing: 2px;
+
+    font-size: .82rem;
+
+    font-weight: 600;
+
+    margin-bottom: 16px;
+
+}
+
+.section-title h2 {
+
+    max-width: 780px;
+
+    margin: auto;
+
+}
+
+
+/*=========================================================
+CONTAINER
+=========================================================*/
+
+.container {
+
+    width: min(92%, var(--container));
+
+    margin: auto;
+
+}
+
+
+/*=========================================================
+SEÇÕES
+=========================================================*/
+
+section {
+
+    padding: 120px 0;
+
+    position: relative;
+
+}
+
+
+/*=========================================================
+HEADER
+=========================================================*/
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+    background: rgba(248, 245, 240, .96);
+
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+
+    box-shadow: 0 6px 20px rgba(74, 90, 73, .07);
+
+    z-index: 9999;
+}
+
+/* LINHA INFERIOR DO HEADER */
+
+header::after {
+    content: "";
+    position: absolute;
+
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+    height: 3px;
+
+    background: #B86E55;
+}
+
+header .container {
+    height: 92px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+/*=========================================================
+LOGO
+=========================================================*/
+
+.logo {
+
+    display: flex;
+
+    flex-direction: column;
+
+    font-family: 'Cormorant Garamond', serif;
+
+    color: var(--forest);
+
+}
+
+.logo strong {
+
+    font-size: 2rem;
+
+    line-height: 1;
+
+}
+
+.logo span {
+
+    font-size: .95rem;
+
+    letter-spacing: .08em;
+
+}
+
+
+/*=========================================================
+MENU DESKTOP
+=========================================================*/
+
+.menu {
+
+    display: flex;
+
+    gap: 42px;
+
+}
+
+.menu a {
+
+    position: relative;
+
+    color: var(--forest);
+
+    font-size: .95rem;
+
+    font-weight: 500;
+
+    transition: var(--transition);
+
+}
+
+.menu a:hover {
+
+    color: var(--terracotta);
+
+}
+
+.menu a::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    bottom: -8px;
+
+    width: 0;
+
+    height: 2px;
+
+    border-radius: 50%;
+
+    background: var(--terracotta);
+
+    transition: var(--transition);
+
+}
+
+.menu a:hover::after,
+.menu a.active::after {
+
+    width: 100%;
+
+}
+
+.menu a.active {
+
+    color: var(--terracotta);
+
+}
+
+
+/*=========================================================
+BOTÃO HEADER
+=========================================================*/
+
+.btn-header {
+
+    padding: 14px 28px;
+
+    border-radius: 50px;
+
+    border: 1px solid var(--olive);
+
+    color: var(--forest);
+
+    transition: var(--transition);
+
+}
+
+.btn-header:hover {
+
+    background: var(--terracotta);
+
+    border-color: var(--terracotta);
+
+    color: #fff;
+
+    transform: translateY(-2px);
+
+}
+
+
+/*=========================================================
+MENU MOBILE
+=========================================================*/
+
+.menu-mobile {
+
+    display: none;
+
+    flex-direction: column;
+
+    gap: 6px;
+
+}
+
+.menu-mobile span {
+
+    width: 30px;
+
+    height: 2px;
+
+    background: var(--forest);
+
+    border-radius: 50%;
+
+    transition: .3s;
+
+}
+
+
+/*=========================================================
+HERO
+=========================================================*/
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    background-image: var(--hero-bg, url("img/hero.jpg"));
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    overflow: hidden;
+}
+
+/*=========================================================
+ONDA SUAVE NO FINAL DO HERO
+=========================================================*/
+
+.hero-wave {
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    width: 100%;
+    height: 55px;
+    z-index: 4;
+    line-height: 0;
+    pointer-events: none;
+}
+
+.hero-wave svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.hero-wave path {
+    fill: var(--white);
+}
+
+/*=========================================================
+CAMADA ESCURA & CONTEÚDO
+=========================================================*/
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(28, 30, 27, 0.65);
+    /* Aumentado para 65% de opacidade */
+    z-index: 1;
+    /* Garante a ordem correta entre o fundo e os textos */
+}
+
+.hero-content {
+    position: relative;
+    z-index: 5;
+    max-width: 850px;
+    color: white;
+    padding: 20px;
+}
+
+.subtitle {
+    display: inline-block;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+    font-size: .8rem;
+}
+
+.hero h1 {
+    color: white;
+    margin-bottom: 18px;
+}
+
+.hero h2 {
+    color: white;
+    font-size: 2rem;
+    font-weight: 400;
+    margin-bottom: 25px;
+}
+
+.hero p {
+    color: rgba(255, 255, 255, .92);
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin: auto auto 45px;
+}
+
+
+/*=========================================================
+BOTÕES
+=========================================================*/
+
+.hero-buttons {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 20px;
+
+    flex-wrap: wrap;
+
+}
+
+.btn {
+
+    display: inline-flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 18px 40px;
+
+    background: var(--terracotta);
+
+    color: white;
+
+    border-radius: 60px;
+
+    transition: var(--transition);
+
+    box-shadow: var(--shadow);
+
+}
+
+.btn:hover {
+
+    transform: translateY(-6px);
+
+    box-shadow: var(--shadow-hover);
+
+}
+
+.btn-outline {
+
+    display: inline-flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 18px 40px;
+
+    border-radius: 60px;
+
+    border: 1px solid rgba(255, 255, 255, .7);
+
+    color: white;
+
+    transition: var(--transition);
+
+}
+
+.btn-outline:hover {
+
+    background: white;
+
+    color: var(--forest);
+
+}
+
+
+/*=========================================================
+SCROLL INDICATOR
+=========================================================*/
+
+.scroll-indicator {
+
+    position: absolute;
+
+    bottom: 35px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+}
+
+.scroll-indicator span {
+
+    display: block;
+
+    width: 2px;
+
+    height: 70px;
+
+    background: white;
+
+    animation: scroll 2s infinite;
+
+}
+
+@keyframes scroll {
+
+    0% {
+
+        opacity: 0;
+
+        transform: translateY(-10px);
+
+    }
+
+    50% {
+
+        opacity: 1;
+
+    }
+
+    100% {
+
+        opacity: 0;
+
+        transform: translateY(20px);
+
+    }
+
+}
+
+
+/*=========================================================
+FRASE
+=========================================================*/
+
+.quote {
+
+    height: 60px;
+
+    padding: 0;
+
+    margin: 0;
+
+    background: var(--white);
+
+    position: relative;
+
+    overflow: visible;
+
+    z-index: 10;
+
+}
+
+/*=========================================================
+TRANSIÇÃO EM ONDA — FRASE → SERVIÇOS
+=========================================================*/
+
+.wave-transition {
+
+    position: relative;
+
+    width: 100%;
+
+    height: 75px;
+
+    margin-top: -1px;
+
+    overflow: hidden;
+
+    line-height: 0;
+
+    background: var(--white);
+
+    z-index: 5;
+
+}
+
+
+.wave-transition svg {
+
+    display: block;
+
+    width: 100%;
+
+    height: 100%;
+
+}
+
+
+.wave-transition path {
+
+    fill: var(--linho);
+
+}
+
+
+.quote .container {
+
+    width: 100%;
+
+    height: 100%;
+
+    position: relative;
+
+    z-index: 5;
+
+}
+
+
+.quote p {
+
+    position: absolute;
+
+    top: 25px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 900px;
+
+    max-width: 90%;
+
+    margin: 0;
+
+    text-align: center;
+
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 2rem;
+
+    line-height: 1.2;
+
+    font-style: italic;
+
+    color: var(--forest);
+
+    z-index: 20;
+
+}
+
+
+/*=========================================================
+COMO POSSO AJUDAR
+=========================================================*/
+
+.services {
+
+    background: var(--linho);
+
+    overflow: hidden;
+
+    position: relative;
+
+    z-index: 1;
+
+}
+
+
+/*=========================================================
+TRANSIÇÃO ORGÂNICA — FRASE → SERVIÇOS
+=========================================================*/
+
+.services::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: -95px;
+
+    left: -5%;
+
+    width: 110%;
+
+    height: 170px;
+
+    background: var(--linho);
+
+    border-radius:
+        0 0 48% 52% / 0 0 75% 100%;
+
+    z-index: 1;
+
+}
+
+
+/*=========================================================
+DECORAÇÃO ORGÂNICA DOS SERVIÇOS
+=========================================================*/
+
+.services::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 260px;
+
+    height: 260px;
+
+    left: -130px;
+
+    bottom: 80px;
+
+    background: var(--terracotta-light);
+
+    opacity: .18;
+
+    border-radius:
+        45% 55% 35% 65% / 60% 40% 60% 40%;
+
+}
+
+
+/*=========================================================
+CONTEÚDO DOS SERVIÇOS
+=========================================================*/
+
+.services .container {
+
+    position: relative;
+
+    z-index: 2;
+
+}
+
+
+/*=========================================================
+TÍTULO SERVIÇOS
+=========================================================*/
+
+.services .section-title {
+
+    max-width: 900px;
+
+    margin: 0 auto 90px;
+
+    position: relative;
+
+    z-index: 2;
+
+}
+
+.services .section-title p {
+
+    max-width: 760px;
+
+    margin: 25px auto 0;
+
+    color: var(--brown);
+
+    text-align: center;
+
+}
+
+
+/*=========================================================
+BLOCOS DE SERVIÇO
+=========================================================*/
+
+.service-block {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 80px;
+
+    align-items: center;
+
+    margin-bottom: 120px;
+
+    position: relative;
+
+    z-index: 2;
+
+}
+
+.service-block:last-child {
+
+    margin-bottom: 0;
+
+}
+
+.service-block.reverse .service-image {
+
+    order: 2;
+
+}
+
+.service-block.reverse .service-text {
+
+    order: 1;
+
+}
+
+/*=========================================================
+BOTÃO SAIBA MAIS
+=========================================================*/
+
+.service-more {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: max-content;
+    margin-top: 28px;
+    padding: 14px 28px;
+
+    background: transparent;
+    border: 1px solid var(--olive);
+    border-radius: 50px;
+
+    color: var(--forest);
+    font-size: .92rem;
+    font-weight: 500;
+    text-decoration: none;
+
+    transition: var(--transition);
+}
+
+.service-more::after {
+    content: "→";
+    margin-left: 8px;
+    font-size: 1rem;
+    transition: transform .35s ease;
+}
+
+.service-more:hover {
+    background: var(--forest);
+    border-color: var(--forest);
+    color: #fff;
+    transform: translateY(-3px);
+    box-shadow: 0 12px 28px rgba(74, 90, 73, .18);
+}
+
+.service-more:hover::after {
+    transform: translateX(4px);
+}
+
+
+/*=========================================================
+IMAGENS DOS SERVIÇOS
+=========================================================*/
+
+.service-image {
+
+    width: 100%;
+
+    overflow: hidden;
+
+    border-radius:
+        30px 80px 30px 80px;
+
+    box-shadow: var(--shadow-hover);
+
+    background: var(--olive);
+
+}
+
+.service-block.reverse .service-image {
+
+    border-radius:
+        80px 30px 80px 30px;
+
+}
+
+.service-image img {
+
+    width: 100%;
+
+    height: 330px;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition: transform .8s ease;
+
+}
+
+.service-block:hover .service-image img {
+
+    transform: scale(1.05);
+
+}
+
+
+/*=========================================================
+TEXTO DOS SERVIÇOS
+=========================================================*/
+
+.service-text {
+
+    display: flex;
+
+    flex-direction: column;
+
+}
+
+.service-text h2 {
+
+    margin: 15px 0 30px;
+
+}
+
+.service-text p {
+
+    margin-bottom: 35px;
+
+    color: var(--text);
+
+    font-size: 1.05rem;
+
+}
+
+
+/*=========================================================
+TAGS
+=========================================================*/
+
+.section-tag {
+
+    display: inline-block;
+
+    width: max-content;
+
+    padding: 8px 18px;
+
+    border-radius: 30px;
+
+    background: rgba(184, 110, 85, .13);
+
+    color: var(--terracotta);
+
+    text-transform: uppercase;
+
+    letter-spacing: 2px;
+
+    font-size: .8rem;
+
+    font-weight: 600;
+
+    margin-bottom: 18px;
+
+}
+
+
+/*=========================================================
+HOVER SERVIÇO
+=========================================================*/
+
+.service-block {
+
+    transition: var(--transition);
+
+}
+
+.service-block:hover {
+
+    transform: translateY(-6px);
+
+}
+
+
+/*=========================================================
+ANIMAÇÃO SERVIÇO
+=========================================================*/
+
+.service-block {
+
+    opacity: 0;
+
+    transform: translateY(60px);
+
+}
+
+.service-block.active {
+
+    opacity: 1;
+
+    transform: translateY(0);
+
+    transition:
+        opacity .8s ease,
+        transform .8s ease;
+
+}
+
+
+/*=========================================================
+TIMELINE — COMO ACONTECE
+=========================================================*/
+
+.timeline {
+
+    background: var(--white);
+
+    overflow: hidden;
+
+}
+
+
+/*=========================================================
+DECORAÇÃO TIMELINE
+=========================================================*/
+
+.timeline::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 320px;
+
+    height: 320px;
+
+    left: -160px;
+
+    top: 100px;
+
+    background: var(--ocre-light);
+
+    opacity: .18;
+
+    border-radius:
+        60% 40% 50% 50% / 45% 55% 45% 55%;
+
+}
+
+
+/*=========================================================
+TIMELINE WRAPPER
+=========================================================*/
+
+.timeline-wrapper {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr auto 1fr auto 1fr;
+
+    align-items: flex-start;
+
+    gap: 25px;
+
+    margin-top: 70px;
+
+    position: relative;
+
+    z-index: 2;
+
+}
+
+
+/*=========================================================
+CARDS DA TIMELINE
+=========================================================*/
+
+.timeline-item {
+
+    text-align: center;
+
+    padding: 40px 28px;
+
+    background: var(--linho);
+
+    border-radius:
+        30px 60px 30px 60px;
+
+    box-shadow: var(--shadow);
+
+    transition: var(--transition);
+
+}
+
+
+/*=========================================================
+ETAPA 01 — LINHO
+=========================================================*/
+
+.timeline-item:nth-child(1) {
+
+    background: var(--linho);
+
+}
+
+
+/*=========================================================
+ETAPA 02 — TERRACOTA SUAVE
+=========================================================*/
+
+.timeline-item:nth-child(3) {
+
+    background: var(--terracotta-light);
+
+}
+
+
+/*=========================================================
+ETAPA 03 — OCRE / AVEIA
+=========================================================*/
+
+.timeline-item:nth-child(5) {
+
+    background: var(--ocre-light);
+
+}
+
+
+/*=========================================================
+HOVER DOS CARDS
+=========================================================*/
+
+.timeline-item:hover {
+
+    transform: translateY(-10px);
+
+    box-shadow: var(--shadow-hover);
+
+}
+
+
+/*=========================================================
+ÍCONES DA TIMELINE
+=========================================================*/
+
+.timeline-icon {
+
+    width: 80px;
+
+    height: 80px;
+
+    margin: 0 auto 25px;
+
+    border-radius: 50%;
+
+    background: var(--forest);
+
+    color: var(--white);
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    font-size: 1.8rem;
+
+    transition: .4s;
+
+}
+
+
+/* ETAPA 01 — VERDE FLORESTA */
+
+.timeline-item:nth-child(1) .timeline-icon {
+
+    background: var(--forest);
+
+}
+
+
+/* ETAPA 02 — TERRACOTA */
+
+.timeline-item:nth-child(3) .timeline-icon {
+
+    background: var(--terracotta);
+
+}
+
+
+/* ETAPA 03 — OLIVA */
+
+.timeline-item:nth-child(5) .timeline-icon {
+
+    background: var(--olive);
+
+}
+
+
+.timeline-item:hover .timeline-icon {
+
+    transform:
+        rotate(8deg) scale(1.08);
+
+}
+
+
+/*=========================================================
+NÚMERO DA ETAPA
+=========================================================*/
+
+.timeline-number {
+
+    display: block;
+
+    margin-bottom: 18px;
+
+    font-size: .85rem;
+
+    color: var(--terracotta);
+
+    letter-spacing: 3px;
+
+    font-weight: 700;
+
+}
+
+
+/*=========================================================
+TÍTULO DA ETAPA
+=========================================================*/
+
+.timeline-item h3 {
+
+    margin-bottom: 18px;
+
+}
+
+
+/*=========================================================
+LINHAS ENTRE AS ETAPAS
+=========================================================*/
+
+.timeline-line {
+
+    width: 80px;
+
+    height: 3px;
+
+    background:
+        linear-gradient(90deg,
+            var(--olive),
+            var(--terracotta),
+            var(--ocre));
+
+    align-self: center;
+
+    border-radius: 10px;
+
+}
+
+
+/*=========================================================
+SOBRE
+=========================================================*/
+
+.about {
+
+    background: var(--aveia);
+
+    overflow: hidden;
+
+}
+
+
+/*=========================================================
+FORMA ORGÂNICA DE FUNDO
+=========================================================*/
+
+.about::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 500px;
+
+    height: 500px;
+
+    right: -240px;
+
+    bottom: -220px;
+
+    background: var(--green-soft);
+
+    opacity: .40;
+
+    border-radius:
+        50% 50% 35% 65% / 60% 40% 60% 40%;
+
+}
+
+
+/*=========================================================
+CONTAINER SOBRE
+=========================================================*/
+
+.about-container {
+
+    display: grid;
+
+    grid-template-columns: 480px 1fr;
+
+    gap: 90px;
+
+    align-items: center;
+
+    position: relative;
+
+    z-index: 2;
+
+}
+
+
+/*=========================================================
+FOTO — ARCO ROMANO
+=========================================================*/
+
+.about-image {
+
+    position: relative;
+
+    width: 100%;
+
+    max-width: 480px;
+
+    padding: 25px;
+
+}
+
+
+/*=========================================================
+MOLDURA EXTERNA
+=========================================================*/
+
+.about-image::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background: var(--forest);
+
+    border-radius:
+        240px 240px 25px 25px;
+
+    transform: rotate(-3deg);
+
+    z-index: 0;
+
+}
+
+
+/*=========================================================
+MOLDURA INTERNA
+=========================================================*/
+
+.about-image::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 12px;
+
+    background: var(--terracotta);
+
+    border-radius:
+        225px 225px 18px 18px;
+
+    transform: rotate(3deg);
+
+    z-index: 0;
+
+    opacity: .75;
+
+}
+
+
+/*=========================================================
+FOTO
+=========================================================*/
+
+.about-image img {
+
+    position: relative;
+
+    z-index: 2;
+
+    width: 100%;
+
+    height: 560px;
+
+    object-fit: cover;
+
+    object-position: center top;
+
+    border-radius:
+        210px 210px 18px 18px;
+
+    box-shadow:
+        0 25px 55px rgba(74, 90, 73, .20);
+
+}
+
+
+/*=========================================================
+FORMA DECORATIVA
+=========================================================*/
+
+.about-shape {
+
+    position: absolute;
+
+    width: 150px;
+
+    height: 150px;
+
+    right: -55px;
+
+    bottom: -35px;
+
+    border-radius: 50%;
+
+    background: var(--ocre);
+
+    opacity: .65;
+
+    z-index: 1;
+
+}
+
+
+/*=========================================================
+CONTEÚDO SOBRE
+=========================================================*/
+
+.about-content {
+
+    position: relative;
+
+    z-index: 3;
+
+}
+
+.about-content h2 {
+
+    margin: 18px 0 35px;
+
+}
+
+.about-content p {
+
+    margin-bottom: 22px;
+
+    color: var(--text);
+
+}
+
+.about-content blockquote {
+
+    margin: 40px 0;
+
+    padding: 25px 30px;
+
+    border-left:
+        4px solid var(--terracotta);
+
+    background:
+        rgba(252, 251, 248, .55);
+
+    border-radius:
+        0 25px 25px 0;
+
+    font-family:
+        'Cormorant Garamond',
+        serif;
+
+    font-size: 1.7rem;
+
+    color: var(--forest);
+
+    font-style: italic;
+
+}
+
+
+/*=========================================================
+TRANSIÇÃO FAQ
+=========================================================*/
+
+.faq::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: -5%;
+
+    top: -65px;
+
+    width: 110%;
+
+    height: 120px;
+
+    background: var(--linho);
+
+    border-radius:
+        0 0 50% 50% / 0 0 80% 80%;
+
+    z-index: 1;
+
+}
+
+.faq::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: -5%;
+
+    bottom: -65px;
+
+    width: 110%;
+
+    height: 120px;
+
+    background: var(--aveia);
+
+    border-radius:
+        50% 50% 0 0 / 80% 80% 0 0;
+
+    z-index: 4;
+
+}
+
+
+/*=========================================================
+DECORAÇÃO BOTÂNICA FAQ
+=========================================================*/
+
+.faq .container {
+
+    position: relative;
+
+    z-index: 6;
+
+}
+
+.faq .section-title {
+
+    position: relative;
+
+}
+
+
+/*=========================================================
+FOLHA FAQ
+=========================================================*/
+
+.faq .section-title::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 95px;
+
+    height: 170px;
+
+    left: -100px;
+
+    top: 0;
+
+    background:
+        rgba(123, 127, 89, .18);
+
+    border-radius:
+        100% 0 100% 0;
+
+    transform: rotate(25deg);
+
+    z-index: -1;
+
+}
+
+
+/*=========================================================
+ACORDEÃO
+=========================================================*/
+
+.accordion {
+
+    max-width: 900px;
+
+    margin: 0 auto;
+
+}
+
+.accordion-item {
+
+    margin-bottom: 18px;
+
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    background: var(--linho);
+
+    box-shadow: var(--shadow);
+
+    border:
+        1px solid rgba(123, 127, 89, .08);
+
+}
+
+.accordion-header {
+
+    width: 100%;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 24px 30px;
+
+    font-size: 1rem;
+
+    font-weight: 600;
+
+    color: var(--forest);
+
+    cursor: pointer;
+
+    transition: .35s;
+
+    text-align: left;
+
+    background: var(--linho);
+
+}
+
+.accordion-header:hover {
+
+    background: var(--aveia);
+
+}
+
+.accordion-header i {
+
+    transition: .35s;
+
+    color: var(--terracotta);
+
+}
+
+.accordion-item.active i {
+
+    transform: rotate(45deg);
+
+}
+
+.accordion-content {
+
+    max-height: 0;
+
+    overflow: hidden;
+
+    transition:
+        max-height .45s ease;
+
+    background: var(--white);
+
+}
+
+.accordion-content p {
+
+    padding: 30px;
+
+    color: var(--brown);
+
+}
+
+
+/*=========================================================
+SCROLL REVEAL
+=========================================================*/
+
+.reveal {
+
+    opacity: 0;
+
+    transform: translateY(60px);
+
+    transition:
+        opacity .8s ease,
+        transform .8s ease;
+
+}
+
+.reveal.active {
+
+    opacity: 1;
+
+    transform: translateY(0);
+
+}
+
+
+/*=========================================================
+CTA FINAL
+=========================================================*/
+
+.cta-final {
+
+    position: relative;
+
+    background: var(--forest);
+
+    min-height: 650px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    overflow: hidden;
+
+}
+
+
+/*=========================================================
+TRANSIÇÃO PARA CTA
+=========================================================*/
+
+.cta-final::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: -5%;
+
+    top: -70px;
+
+    width: 110%;
+
+    height: 130px;
+
+    background: var(--aveia);
+
+    border-radius:
+        0 0 50% 50% / 0 0 80% 80%;
+
+    z-index: 3;
+
+}
+
+
+/*=========================================================
+OVERLAY CTA
+=========================================================*/
+
+/*
+IMPORTANTE:
+A seção utiliza apenas uma cor sólida.
+Não existe degradê.
+*/
+
+.cta-overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    background: transparent;
+
+}
+
+
+/*=========================================================
+CONTEÚDO CTA
+=========================================================*/
+
+.cta-content {
+
+    position: relative;
+
+    z-index: 5;
+
+    max-width: 760px;
+
+    color: #fff;
+
+}
+
+.cta-content span {
+
+    display: block;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+
+    margin-bottom: 18px;
+
+    color: var(--aveia);
+
+    font-size: .85rem;
+
+}
+
+.cta-content h2 {
+
+    color: #fff;
+
+    font-size: 3.4rem;
+
+    margin-bottom: 30px;
+
+}
+
+.cta-content p {
+
+    color: var(--aveia);
+
+    margin-bottom: 40px;
+
+    font-size: 1.08rem;
+
+}
+
+
+/*=========================================================
+FOOTER
+=========================================================*/
+
+.footer {
+
+    background: #354235;
+
+    color: #F7F3EE;
+
+    padding-top: 80px;
+
+    position: relative;
+
+}
+
+
+/*=========================================================
+TRANSIÇÃO CTA → FOOTER
+=========================================================*/
+
+.footer::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: -5%;
+
+    top: -55px;
+
+    width: 110%;
+
+    height: 100px;
+
+    background: var(--forest);
+
+    border-radius:
+        0 0 50% 50% / 0 0 80% 80%;
+
+}
+
+
+/*=========================================================
+FOOTER GRID
+=========================================================*/
+
+.footer-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        2fr 1fr 1fr;
+
+    gap: 60px;
+
+    position: relative;
+
+    z-index: 3;
+
+}
+
+.footer h3,
+.footer h4 {
+
+    color: #fff;
+
+    margin-bottom: 22px;
+
+}
+
+.footer h3 {
+
+    font-family:
+        'Cormorant Garamond',
+        serif;
+
+    font-size: 2rem;
+
+}
+
+.footer h3 strong {
+
+    display: block;
+
+}
+
+.footer p {
+
+    color: var(--aveia);
+
+}
+
+.footer ul {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 14px;
+
+}
+
+.footer a {
+
+    color: var(--aveia);
+
+    transition: .3s;
+
+}
+
+.footer a:hover {
+
+    color: var(--ocre);
+
+}
+
+.footer-menu {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 14px;
+
+}
+
+.footer-contact-list {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 16px;
+
+}
+
+.footer-contact-item {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+}
+
+.footer-contact-item i {
+
+    color: var(--ocre);
+
+}
+
+
+/*=========================================================
+FOOTER BOTTOM
+=========================================================*/
+
+.footer-bottom {
+
+    border-top:
+        1px solid rgba(255, 255, 255, .12);
+
+    margin-top: 60px;
+
+    padding: 25px 0;
+
+    text-align: center;
+
+    position: relative;
+
+    z-index: 3;
+
+}
+
+.footer-bottom p {
+
+    color: var(--aveia);
+
+}
+
+
+/*=========================================================
+BOTÃO WHATSAPP
+=========================================================*/
+
+.whatsapp {
+
+    position: fixed;
+
+    right: 25px;
+
+    bottom: 25px;
+
+    z-index: 999;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    background: #25D366;
+
+    color: #fff;
+
+    padding: 16px 22px;
+
+    border-radius: 50px;
+
+    box-shadow:
+        0 20px 40px rgba(0, 0, 0, .18);
+
+    transition: .35s;
+
+}
+
+.whatsapp:hover {
+
+    transform: translateY(-6px);
+
+    background: #1faa52;
+
+}
+
+.whatsapp i {
+
+    font-size: 1.5rem;
+
+}
+
+
+/*=========================================================
+MENU MOBILE
+=========================================================*/
+
+.mobile-nav {
+
+    position: fixed;
+
+    top: 0;
+
+    right: -100%;
+
+    width: 320px;
+
+    height: 100vh;
+
+    background: var(--white);
+
+    z-index: 9998;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    padding: 50px;
+
+    gap: 28px;
+
+    transition: .45s;
+
+    box-shadow:
+        -10px 0 40px rgba(74, 90, 73, .12);
+
+}
+
+.mobile-nav.active {
+
+    right: 0;
+
+}
+
+.mobile-nav a {
+
+    font-size: 1.1rem;
+
+    color: var(--forest);
+
+    transition: .3s;
+
+}
+
+
+
+/*=========================================================
+FOCO ACESSÍVEL
+=========================================================*/
+
+a:focus,
+button:focus {
+    outline: none;
+}
+
+a:focus-visible,
+button:focus-visible {
+    outline: 2px solid var(--terracotta);
+    outline-offset: 4px;
+    border-radius: 6px;
+}
+
+::selection {
+
+    background: var(--terracotta);
+
+    color: #fff;
+
+}
+
+
+/*=========================================================
+RESPONSIVIDADE
+=========================================================*/
+
+@media(max-width:1100px) {
+
+
+    /* SERVIÇOS */
+
+    .service-block {
+
+        gap: 50px;
+
+    }
+
+
+    /* TIMELINE */
+
+    .timeline-wrapper {
+
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+
+    }
+
+    .timeline-line {
+
+        display: none;
+
+    }
+
+
+    /* SOBRE */
+
+    .about-container {
+
+        grid-template-columns: 1fr;
+
+        text-align: center;
+
+    }
+
+    .about-image {
+
+        max-width: 520px;
+
+        margin: auto;
+
+    }
+
+    .about-content {
+
+        max-width: 850px;
+
+        margin: auto;
+
+    }
+
+    .about-content .section-tag {
+
+        margin-left: auto;
+
+        margin-right: auto;
+
+    }
+
+    .about-content blockquote {
+
+        text-align: left;
+
+    }
+
+
+    /* FOOTER */
+
+    .footer-grid {
+
+        grid-template-columns: 1fr 1fr;
+
+    }
+
+}
+
+
+/*=========================================================
+TABLET
+=========================================================*/
+
+@media(max-width:820px) {
+
+
+    /* TIPOGRAFIA */
+
+    h1 {
+
+        font-size: 3.3rem;
+
+    }
+
+    h2 {
+
+        font-size: 2.4rem;
+
+    }
+
+
+    /* HEADER */
+
+    .menu {
+
+        display: none;
+
+    }
+
+    .btn-header {
+
+        display: none;
+
+    }
+
+    .menu-mobile {
+
+        display: flex;
+
+    }
+
+
+    /* SERVIÇOS */
+
+    .service-block {
+
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+
+        margin-bottom: 90px;
+
+    }
+
+    .service-block.reverse .service-image {
+
+        order: 1;
+
+    }
+
+    .service-block.reverse .service-text {
+
+        order: 2;
+
+    }
+
+
+    .service-image img {
+
+        height: 340px;
+
+    }
+
+
+    /* SEÇÕES */
+
+    section {
+
+        padding: 100px 0;
+
+    }
+
+
+    /* TRANSIÇÃO SERVIÇOS */
+
+    .services {
+
+        padding-top: 150px;
+
+    }
+
+
+    /* FOOTER */
+
+    .footer-grid {
+
+        grid-template-columns: 1fr;
+
+        gap: 45px;
+
+    }
+
+
+    /* ARCO */
+
+    .about-image img {
+
+        height: 540px;
+
+    }
+
+}
+
+
+/*=========================================================
+CELULAR
+=========================================================*/
+
+@media(max-width:600px) {
+
+
+    /* TIPOGRAFIA */
+
+    h1 {
+
+        font-size: 2.6rem;
+
+    }
+
+    h2 {
+
+        font-size: 2rem;
+
+    }
+
+    h3 {
+
+        font-size: 1.55rem;
+
+    }
+
+
+    /* HERO */
+
+    .hero {
+
+        background-attachment: scroll;
+
+        min-height: 100svh;
+
+    }
+
+    .hero h2 {
+
+        font-size: 1.35rem;
+
+    }
+
+    .hero p {
+
+        font-size: 1rem;
+
+    }
+
+
+    /* BOTÕES */
+
+    .hero-buttons {
+
+        flex-direction: column;
+
+        gap: 14px;
+
+    }
+
+    .btn,
+    .btn-outline {
+
+        width: 100%;
+
+    }
+
+
+    /* FRASE */
+
+    .quote {
+
+        height: 170px;
+
+    }
+
+    .quote p {
+
+        font-size: 1.55rem;
+
+    }
+
+
+    /* SEÇÕES */
+
+    section {
+
+        padding: 85px 0;
+
+    }
+
+
+    /* TRANSIÇÃO SERVIÇOS */
+
+    .services {
+
+        padding-top: 130px;
+
+    }
+
+    .services::before {
+
+        top: -75px;
+
+        height: 130px;
+
+    }
+
+
+    /* TÍTULOS */
+
+    .section-title {
+
+        margin-bottom: 55px;
+
+    }
+
+
+    /* SERVIÇOS */
+
+    .service-text p {
+
+        font-size: 1rem;
+
+    }
+
+    .service-text ul {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .service-image img {
+
+        height: 270px;
+
+    }
+
+
+
+
+    /* TIMELINE */
+
+    .timeline-item {
+
+        padding: 35px 22px;
+
+    }
+
+
+    /* SOBRE */
+
+    .about-image {
+
+        padding: 12px;
+
+    }
+
+    .about-image img {
+
+        height: 460px;
+
+        border-radius:
+            190px 190px 18px 18px;
+
+    }
+
+    .about-image::before {
+
+        border-radius:
+            205px 205px 25px 25px;
+
+    }
+
+    .about-shape {
+
+        width: 190px;
+
+        height: 260px;
+
+        left: -45px;
+
+        top: -30px;
+
+    }
+
+    .about-image::after {
+
+        width: 90px;
+
+        height: 170px;
+
+        right: -30px;
+
+    }
+
+    .about-content blockquote {
+
+        font-size: 1.45rem;
+
+        padding-left: 20px;
+
+    }
+
+
+    /* FAQ */
+
+    .accordion-header {
+
+        padding: 21px 20px;
+
+        font-size: .95rem;
+
+    }
+
+    .accordion-content p {
+
+        padding: 24px 20px;
+
+    }
+
+
+    /* CTA */
+
+    .cta-final {
+
+        min-height: 600px;
+
+        padding: 120px 0 90px;
+
+    }
+
+    .cta-content h2 {
+
+        font-size: 2.2rem;
+
+    }
+
+    .cta-content p {
+
+        font-size: 1rem;
+
+    }
+
+
+    /* WHATSAPP */
+
+    .whatsapp span {
+
+        display: none;
+
+    }
+
+    .whatsapp {
+
+        width: 65px;
+
+        height: 65px;
+
+        justify-content: center;
+
+        padding: 0;
+
+        border-radius: 50%;
+
+    }
+
+
+    /* MENU MOBILE */
+
+    .mobile-nav {
+
+        width: 100%;
+
+    }
+
+}
+
+
+/*=========================================================
+REDUÇÃO DE MOVIMENTO
+=========================================================*/
+
+@media(prefers-reduced-motion: reduce) {
+
+    html {
+
+        scroll-behavior: auto;
+
+    }
+
+    *,
+    *::before,
+    *::after {
+
+        animation-duration: .01ms !important;
+
+        animation-iteration-count: 1 !important;
+
+        transition-duration: .01ms !important;
+
+        scroll-behavior: auto !important;
+
+    }
+
+}
+
+
+/* COMEÇA AQUI
+
+/* =========================================================
+   PÁGINA — PSICOTERAPIA PARA CRIANÇAS E ADOLESCENTES
+   ========================================================= */
+
+
+/* =========================================================
+   VARIÁVEIS ESPECÍFICAS DA PÁGINA
+   ========================================================= */
+
+:root {
+    --child-mustard: #F2C14E;
+    --child-ochre: #E07A5F;
+    --child-green: #6CA28D;
+
+    /* Corrigido o valor inválido #1D3S57 para um azul válido */
+    --child-blue: #1D3D57;
+
+    --child-light: #F7F9F3;
+    --child-beige: #E9E1D6;
+
+    --child-dark: #344B4A;
+    --child-text: #454844;
+
+    --child-radius: 28px;
+}
+
+
+/* =========================================================
+   CONTAINER
+   ========================================================= */
+
+.children-page .container {
+    width: min(1200px, calc(100% - 48px));
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   HERO — CRIANÇAS E ADOLESCENTES
+   IMAGEM + SOL INTEGRADO
+========================================================= */
+
+.children-hero {
+    position: relative;
+
+    min-height: calc(100vh - 92px);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    background: #E9E1D6;
+}
+
+
+/* =========================================================
+   IMAGEM DE FUNDO
+========================================================= */
+
+.children-hero-background {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 0;
+
+    background-image: url("img/hero-criancas.png");
+
+    background-size: cover;
+
+    background-position: center center;
+
+    background-repeat: no-repeat;
+}
+
+
+/* =========================================================
+   CAMADA DE LEITURA
+========================================================= */
+
+.children-hero-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 1;
+
+    /*
+       Não queremos escurecer a fotografia inteira.
+       A camada é apenas uma película muito suave
+       para integrar o texto à imagem.
+    */
+
+    background:
+        radial-gradient(
+            ellipse at center,
+            rgba(247, 249, 243, 0.18) 0%,
+            rgba(247, 249, 243, 0.06) 38%,
+            rgba(29, 61, 87, 0.10) 100%
+        );
+}
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.children-hero-container {
+    position: relative;
+
+    z-index: 5;
+
+    min-height: calc(100vh - 92px);
+
+    width: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   CONTEÚDO
+========================================================= */
+
+.children-hero-content {
+    position: relative;
+
+    width: min(760px, 92%);
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    /*
+       O conteúdo fica centralizado
+       exatamente sobre o sol da imagem.
+    */
+
+    padding: 70px 50px;
+}
+
+
+/* =========================================================
+   ETIQUETA "PSICOTERAPIA"
+========================================================= */
+
+.children-hero-tag {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    margin-bottom: 22px;
+
+    color: #4F8F7A;
+
+    font-family: 'Inter', sans-serif;
+
+    font-size: 0.72rem;
+
+    font-weight: 600;
+
+    letter-spacing: 0.18em;
+
+    text-transform: uppercase;
+}
+
+
+.children-hero-line {
+    display: block;
+
+    width: 30px;
+
+    height: 1px;
+
+    background: #F2C14E;
+
+    border-radius: 999px;
+}
+
+
+/* =========================================================
+   TÍTULO
+========================================================= */
+
+.children-hero h1 {
+    max-width: 700px;
+
+    margin: 0;
+
+    color: #1D3D57;
+
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: clamp(
+        3.5rem,
+        6vw,
+        5.8rem
+    );
+
+    font-weight: 500;
+
+    line-height: 0.92;
+
+    letter-spacing: -0.025em;
+
+    text-wrap: balance;
+}
+
+
+/* =========================================================
+   SUBTÍTULO
+========================================================= */
+
+.children-hero .children-age {
+    margin-top: 25px;
+
+    color: #394F54;
+
+    font-family: 'Inter', sans-serif;
+
+    font-size: 0.98rem;
+
+    font-weight: 400;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   PEQUENO ELEMENTO DECORATIVO
+========================================================= */
+
+.children-hero-decoration {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 9px;
+
+    margin-top: 23px;
+
+    color: #E07A5F;
+}
+
+
+.children-hero-decoration span {
+    width: 28px;
+
+    height: 1px;
+
+    background: #E07A5F;
+
+    opacity: 0.8;
+}
+
+
+.children-hero-decoration i {
+    font-size: 0.65rem;
+
+    color: #E07A5F;
+}
+
+
+/* =========================================================
+   INDICADOR DE SCROLL
+========================================================= */
+
+.children-hero-scroll {
+    position: absolute;
+
+    z-index: 6;
+
+    left: 50%;
+
+    bottom: 22px;
+
+    transform: translateX(-50%);
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 7px;
+
+    color: #1D3D57;
+
+    opacity: 0.72;
+
+    text-align: center;
+}
+
+
+.children-hero-scroll span {
+    display: block;
+
+    width: 1px;
+
+    height: 28px;
+
+    background: #1D3D57;
+
+    animation: childrenScroll 2s ease-in-out infinite;
+}
+
+
+.children-hero-scroll small {
+    font-family: 'Inter', sans-serif;
+
+    font-size: 0.58rem;
+
+    font-weight: 600;
+
+    letter-spacing: 0.14em;
+
+    text-transform: uppercase;
+}
+
+
+@keyframes childrenScroll {
+
+    0%,
+    100% {
+        transform: translateY(0);
+
+        opacity: 0.45;
+    }
+
+    50% {
+        transform: translateY(5px);
+
+        opacity: 1;
+    }
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .children-hero {
+        min-height: calc(100vh - 80px);
+    }
+
+
+    .children-hero-container {
+        min-height: calc(100vh - 80px);
+    }
+
+
+    .children-hero-background {
+        background-position: center center;
+    }
+
+
+    .children-hero-content {
+        width: min(700px, 94%);
+
+        padding: 65px 35px;
+    }
+
+
+    .children-hero h1 {
+        font-size: clamp(
+            3.2rem,
+            8vw,
+            5rem
+        );
+    }
+
+}
+
+
+/* =========================================================
+   CELULAR
+========================================================= */
+
+@media (max-width: 650px) {
+
+    .children-hero {
+        min-height: 78vh;
+    }
+
+
+    .children-hero-container {
+        min-height: 78vh;
+    }
+
+
+    .children-hero-background {
+        /*
+           No celular deslocamos um pouco a fotografia
+           para preservar o sol e o ambiente.
+        */
+
+        background-position: 56% center;
+    }
+
+
+    .children-hero-overlay {
+        background:
+            radial-gradient(
+                ellipse at center,
+                rgba(247, 249, 243, 0.20) 0%,
+                rgba(247, 249, 243, 0.08) 42%,
+                rgba(29, 61, 87, 0.10) 100%
+            );
+    }
+
+
+    .children-hero-content {
+        width: 94%;
+
+        padding: 55px 22px;
+    }
+
+
+    .children-hero-tag {
+        gap: 9px;
+
+        margin-bottom: 17px;
+
+        font-size: 0.62rem;
+
+        letter-spacing: 0.15em;
+    }
+
+
+    .children-hero-line {
+        width: 21px;
+    }
+
+
+    .children-hero h1 {
+        max-width: 360px;
+
+        font-size: clamp(
+            2.8rem,
+            12vw,
+            4rem
+        );
+
+        line-height: 0.94;
+    }
+
+
+    .children-hero .children-age {
+        margin-top: 19px;
+
+        font-size: 0.86rem;
+    }
+
+
+    .children-hero-decoration {
+        margin-top: 18px;
+    }
+
+
+    .children-hero-decoration span {
+        width: 21px;
+    }
+
+
+    .children-hero-scroll {
+        display: none;
+    }
+
+}
+
+
+/* =========================================================
+   ACESSIBILIDADE
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .children-hero-scroll span {
+        animation: none;
+    }
+
+}
+
+
+/* =========================================================
+   SINAIS DE ATENÇÃO
+   TRILHA HORIZONTAL
+========================================================= */
+
+.children-signs {
+    position: relative;
+
+    padding: 145px 0 155px;
+
+    background: var(--child-beige);
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   FORMAS DECORATIVAS
+========================================================= */
+
+.children-signs::before {
+    content: "";
+
+    position: absolute;
+
+    width: 420px;
+    height: 420px;
+
+    top: -250px;
+    right: -130px;
+
+    border-radius: 50%;
+
+    background: rgba(242, 193, 78, 0.10);
+}
+
+
+.children-signs::after {
+    content: "";
+
+    position: absolute;
+
+    width: 300px;
+    height: 300px;
+
+    bottom: -190px;
+    left: -140px;
+
+    border-radius: 50%;
+
+    background: rgba(108, 162, 141, 0.08);
+}
+
+
+/* =========================================================
+   TÍTULO
+========================================================= */
+
+.children-signs-intro {
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 850px;
+
+    margin: 0 auto 80px;
+
+    text-align: center;
+}
+
+
+.children-signs-intro .section-title {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin-bottom: 20px;
+
+    color: var(--child-ochre);
+
+    font-size: 0.78rem;
+
+    font-weight: 700;
+
+    letter-spacing: 0.15em;
+
+    text-transform: uppercase;
+}
+
+
+.children-signs-intro .section-title::before,
+.children-signs-intro .section-title::after {
+    content: "";
+
+    width: 28px;
+    height: 1px;
+
+    background: var(--child-ochre);
+
+    opacity: 0.55;
+}
+
+
+.children-signs-intro h2 {
+    margin: 0;
+
+    color: var(--child-blue);
+
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: clamp(2.8rem, 5vw, 4.5rem);
+
+    font-weight: 500;
+
+    line-height: 1.02;
+
+    letter-spacing: -0.02em;
+}
+
+
+/* =========================================================
+   TRILHA
+========================================================= */
+
+.children-signs-trail {
+    position: relative;
+
+    z-index: 2;
+
+    display: grid;
+
+    grid-template-columns: repeat(7, 1fr);
+
+    width: 100%;
+
+    max-width: 1180px;
+
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   LINHA CENTRAL DA TRILHA
+========================================================= */
+
+.children-signs-trail::before {
+    content: "";
+
+    position: absolute;
+
+    top: 47px;
+
+    left: 45px;
+    right: 45px;
+
+    height: 2px;
+
+    background: rgba(108, 162, 141, 0.38);
+
+    z-index: 0;
+}
+
+
+/* =========================================================
+   ITEM
+========================================================= */
+
+.children-trail-item {
+    position: relative;
+
+    min-width: 0;
+
+    padding: 0 10px;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   PARTE SUPERIOR
+========================================================= */
+
+.children-trail-top {
+    position: relative;
+
+    z-index: 2;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 10px;
+}
+
+
+/* =========================================================
+   NÚMERO
+========================================================= */
+
+.children-trail-number {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 38px;
+    height: 38px;
+
+    border-radius: 50%;
+
+    background: var(--child-blue);
+
+    color: white;
+
+    font-size: 0.68rem;
+
+    font-weight: 700;
+
+    letter-spacing: 0.04em;
+
+    box-shadow:
+        0 0 0 7px var(--child-beige);
+}
+
+
+/* =========================================================
+   ÍCONE
+========================================================= */
+
+.children-trail-icon {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 62px;
+    height: 62px;
+
+    border-radius: 20px;
+
+    background: var(--child-light);
+
+    color: var(--trail-color);
+
+    font-size: 1rem;
+
+    box-shadow:
+        0 10px 25px rgba(52, 75, 74, 0.07);
+}
+
+
+/* =========================================================
+   TEXTO
+========================================================= */
+
+.children-trail-item p {
+    max-width: 145px;
+
+    margin: 22px auto 0;
+
+    color: var(--child-blue);
+
+    font-size: 0.86rem;
+
+    font-weight: 500;
+
+    line-height: 1.45;
+}
+
+
+/* =========================================================
+   CORES
+========================================================= */
+
+.children-trail-item:nth-child(1) {
+    --trail-color: #C49A32;
+}
+
+
+.children-trail-item:nth-child(2) {
+    --trail-color: #5D917D;
+}
+
+
+.children-trail-item:nth-child(3) {
+    --trail-color: #1D3D57;
+}
+
+
+.children-trail-item:nth-child(4) {
+    --trail-color: #D06F56;
+}
+
+
+.children-trail-item:nth-child(5) {
+    --trail-color: #6CA28D;
+}
+
+
+.children-trail-item:nth-child(6) {
+    --trail-color: #C49A32;
+}
+
+
+.children-trail-item:nth-child(7) {
+    --trail-color: #47657A;
+}
+
+
+/* =========================================================
+   PONTO COLORIDO NO ÍCONE
+========================================================= */
+
+.children-trail-icon::before {
+    content: "";
+
+    position: absolute;
+}
+
+
+/* =========================================================
+   VARIAÇÃO VISUAL DA TRILHA
+========================================================= */
+
+.children-trail-item:nth-child(even) {
+    transform: translateY(28px);
+}
+
+
+.children-trail-item:nth-child(odd) {
+    transform: translateY(-4px);
+}
+
+
+/* =========================================================
+   HOVER
+========================================================= */
+
+.children-trail-item {
+    transition: transform 0.35s ease;
+}
+
+
+.children-trail-item:hover {
+    transform: translateY(-10px);
+}
+
+
+.children-trail-item:nth-child(even):hover {
+    transform: translateY(18px);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1050px) {
+
+    .children-signs {
+        padding: 120px 0 140px;
+    }
+
+
+    .children-signs-trail {
+        overflow-x: auto;
+
+        grid-template-columns:
+            repeat(7, 170px);
+
+        justify-content: start;
+
+        padding: 20px 10px 40px;
+
+        scrollbar-width: thin;
+    }
+
+
+    .children-signs-trail::before {
+        left: 50px;
+        right: auto;
+
+        width: 1060px;
+    }
+
+
+    .children-trail-item {
+        padding: 0 8px;
+    }
+}
+
+
+/* =========================================================
+   CELULAR
+========================================================= */
+
+@media (max-width: 650px) {
+
+    .children-signs {
+        padding: 95px 0 100px;
+    }
+
+
+    .children-signs-intro {
+        margin-bottom: 50px;
+    }
+
+
+    .children-signs-intro .section-title {
+        font-size: 0.68rem;
+
+        letter-spacing: 0.1em;
+    }
+
+
+    .children-signs-intro .section-title::before,
+    .children-signs-intro .section-title::after {
+        width: 14px;
+    }
+
+
+    .children-signs-intro h2 {
+        font-size: 2.75rem;
+
+        line-height: 1.04;
+    }
+
+
+    .children-signs-trail {
+        grid-template-columns:
+            repeat(7, 155px);
+
+        gap: 0;
+
+        width: calc(100vw - 16px);
+
+        margin-left: 0;
+
+        padding:
+            20px 10px
+            45px 10px;
+    }
+
+
+    .children-signs-trail::before {
+        top: 47px;
+
+        left: 45px;
+
+        width: 980px;
+    }
+
+
+    .children-trail-item {
+        padding: 0 7px;
+    }
+
+
+    .children-trail-item:nth-child(even) {
+        transform: translateY(20px);
+    }
+
+
+    .children-trail-item:hover {
+        transform: translateY(-4px);
+    }
+
+
+    .children-trail-item:nth-child(even):hover {
+        transform: translateY(15px);
+    }
+
+
+    .children-trail-number {
+        width: 34px;
+        height: 34px;
+
+        font-size: 0.62rem;
+    }
+
+
+    .children-trail-icon {
+        width: 54px;
+        height: 54px;
+
+        border-radius: 17px;
+
+        font-size: 0.9rem;
+    }
+
+
+    .children-trail-item p {
+        max-width: 135px;
+
+        margin-top: 18px;
+
+        font-size: 0.82rem;
+    }
+}
+
+/* =========================================================
+   PROCESSO — CRIANÇAS E ADOLESCENTES
+   ========================================================= */
+
+.children-process {
+    position: relative;
+
+    padding: 150px 0;
+
+    background: var(--child-light);
+
+    overflow: hidden;
+}
+
+
+.children-process::before {
+    content: "";
+
+    position: absolute;
+
+    width: 400px;
+    height: 400px;
+
+    left: -220px;
+    top: 180px;
+
+    border-radius: 50%;
+
+    background: rgba(242, 193, 78, 0.08);
+}
+
+
+.children-process-grid {
+    position: relative;
+    z-index: 2;
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 35px;
+}
+
+
+.children-process-column {
+    position: relative;
+
+    padding: 55px;
+
+    border-radius: 42px;
+
+    background: white;
+
+    box-shadow:
+        0 20px 50px rgba(52, 75, 74, 0.06);
+}
+
+
+.children-process-column:first-child {
+    border-top: 6px solid var(--child-mustard);
+}
+
+
+.children-process-column:last-child {
+    border-top: 6px solid var(--child-green);
+}
+
+
+/* Tag */
+
+.children-process-column .section-tag {
+    margin-bottom: 18px;
+
+    color: var(--child-ochre);
+
+    font-size: 0.78rem;
+    font-weight: 700;
+
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+
+
+/* Título */
+
+.children-process-column h2 {
+    margin-bottom: 32px;
+
+    color: var(--child-blue);
+
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: clamp(2.3rem, 3.5vw, 3.3rem);
+    font-weight: 500;
+
+    line-height: 1;
+}
+
+
+.children-process-column p {
+    margin-bottom: 20px;
+
+    color: var(--child-text);
+
+    font-size: 1rem;
+    line-height: 1.85;
+}
+
+
+.children-process-column p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* =========================================================
+   ELEMENTOS DECORATIVOS DO PROCESSO
+   ========================================================= */
+
+.children-process-column::after {
+    content: "";
+
+    position: absolute;
+
+    right: 28px;
+    top: 28px;
+
+    width: 50px;
+    height: 50px;
+
+    border-radius: 50%;
+
+    border: 2px solid rgba(242, 193, 78, 0.35);
+}
+
+
+.children-process-column:last-child::after {
+    border-color: rgba(108, 162, 141, 0.35);
+}
+
+
+/* =========================================================
+   FAMÍLIA
+   ========================================================= */
+
+.children-family {
+    position: relative;
+
+    padding: 140px 0;
+
+    background: var(--child-blue);
+
+    overflow: hidden;
+}
+
+
+.children-family::before {
+    content: "";
+
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    right: -250px;
+    top: -250px;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(242, 193, 78, 0.25);
+}
+
+
+.children-family::after {
+    content: "";
+
+    position: absolute;
+
+    width: 260px;
+    height: 260px;
+
+    left: -130px;
+    bottom: -140px;
+
+    border-radius: 50%;
+
+    background: rgba(108, 162, 141, 0.10);
+}
+
+
+.children-family-content {
+    position: relative;
+    z-index: 2;
+
+    max-width: 820px;
+
+    margin: 0 auto;
+
+    text-align: center;
+}
+
+
+.children-family .section-tag {
+    display: inline-block;
+
+    margin-bottom: 20px;
+
+    color: var(--child-mustard);
+
+    font-size: 0.8rem;
+    font-weight: 700;
+
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+}
+
+
+.children-family h2 {
+    margin-bottom: 30px;
+
+    color: white;
+
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: clamp(2.8rem, 5vw, 4.5rem);
+    font-weight: 500;
+
+    line-height: 1;
+}
+
+
+.children-family p {
+    max-width: 700px;
+
+    margin: 0 auto 18px;
+
+    color: rgba(255, 255, 255, 0.82);
+
+    font-size: 1.05rem;
+    line-height: 1.85;
+}
+
+
+/* =========================================================
+   CTA
+   ========================================================= */
+
+.children-cta {
+    position: relative;
+
+    padding: 130px 0;
+
+    background: var(--child-mustard);
+
+    overflow: hidden;
+}
+
+
+.children-cta::before {
+    content: "";
+
+    position: absolute;
+
+    width: 350px;
+    height: 350px;
+
+    left: -180px;
+    top: -180px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.16);
+}
+
+
+.children-cta::after {
+    content: "";
+
+    position: absolute;
+
+    width: 260px;
+    height: 260px;
+
+    right: -120px;
+    bottom: -130px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.12);
+}
+
+
+.children-cta-content {
+    position: relative;
+    z-index: 2;
+
+    max-width: 850px;
+
+    margin: 0 auto;
+
+    text-align: center;
+}
+
+
+.children-cta h2 {
+    margin-bottom: 35px;
+
+    color: var(--child-blue);
+
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: clamp(2.7rem, 5vw, 4.5rem);
+    font-weight: 500;
+
+    line-height: 1.02;
+}
+
+
+/* =========================================================
+   BOTÃO DA PÁGINA
+   ========================================================= */
+
+.children-cta .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 54px;
+
+    padding: 15px 30px;
+
+    border: 2px solid var(--child-blue);
+    border-radius: 999px;
+
+    background: var(--child-blue);
+
+    color: white;
+
+    font-size: 0.92rem;
+    font-weight: 600;
+
+    text-decoration: none;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+
+.children-cta .btn:hover {
+    background: transparent;
+
+    color: var(--child-blue);
+
+    transform: translateY(-3px);
+}
+
+
+/* =========================================================
+   RESPONSIVIDADE — TABLET
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
+    .children-hero {
+        min-height: auto;
+
+        padding: 130px 0 100px;
+    }
+
+
+    .children-hero-container {
+        grid-template-columns: 1fr;
+
+        gap: 60px;
+    }
+
+
+    .children-hero-content {
+        max-width: 720px;
+    }
+
+
+    .children-hero-visual {
+        max-width: 560px;
+
+        margin: 0 auto;
+    }
+
+
+    .children-signs-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+
+    .children-process-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .children-process-column {
+        padding: 45px;
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVIDADE — CELULAR
+   ========================================================= */
+
+@media (max-width: 650px) {
+
+    .children-page .container {
+        width: min(100% - 32px, 1200px);
+    }
+
+
+    /* HERO */
+
+    .children-hero {
+        padding: 110px 0 80px;
+    }
+
+
+    .children-hero h1 {
+        font-size: clamp(2.8rem, 14vw, 4rem);
+
+        line-height: 0.98;
+    }
+
+
+    .children-age {
+        font-size: 1rem;
+    }
+
+
+    .children-hero-visual::before {
+        width: 280px;
+        height: 280px;
+    }
+
+
+    .children-sun {
+        width: 65px;
+        height: 65px;
+
+        top: -20px;
+        right: 0;
+    }
+
+
+    /* SINAIS */
+
+    .children-signs {
+        padding: 100px 0 90px;
+    }
+
+
+    .children-signs::before {
+        top: -45px;
+        height: 80px;
+    }
+
+
+    .children-signs h2 {
+        margin-bottom: 35px;
+
+        font-size: 2.6rem;
+    }
+
+
+    .children-signs-grid {
+        grid-template-columns: 1fr;
+
+        gap: 15px;
+    }
+
+
+    .children-sign {
+        min-height: 160px;
+
+        padding: 25px;
+    }
+
+
+    /* PROCESSO */
+
+    .children-process {
+        padding: 90px 0;
+    }
+
+
+    .children-process-grid {
+        gap: 20px;
+    }
+
+
+    .children-process-column {
+        padding: 32px 25px;
+
+        border-radius: 28px;
+    }
+
+
+    .children-process-column h2 {
+        font-size: 2.5rem;
+    }
+
+
+    .children-process-column p {
+        font-size: 0.96rem;
+
+        line-height: 1.75;
+    }
+
+
+    /* FAMÍLIA */
+
+    .children-family {
+        padding: 95px 0;
+    }
+
+
+    .children-family h2 {
+        font-size: 2.9rem;
+    }
+
+
+    .children-family p {
+        font-size: 0.98rem;
+
+        line-height: 1.75;
+    }
+
+
+    /* CTA */
+
+    .children-cta {
+        padding: 90px 0;
+    }
+
+
+    .children-cta h2 {
+        font-size: 2.9rem;
+    }
+
+
+    .children-cta .btn {
+        width: 100%;
+
+        padding: 15px 20px;
+    }
+}
+
+
+/* =========================================================
+   ACESSIBILIDADE
+   ========================================================= */
+
+.children-page a:focus-visible,
+.children-page button:focus-visible {
+    outline: 3px solid var(--child-ochre);
+    outline-offset: 4px;
+}
+
+
+/* =========================================================
+   REDUÇÃO DE MOVIMENTO
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .children-page *,
+    .children-page *::before,
+    .children-page *::after {
+        scroll-behavior: auto !important;
+        transition: none !important;
+        animation: none !important;
+    }
+}
+
+
+/* COMEÇA AQUI 2
+
+/*=========================================================
+ PROJETOS ESCOLARES E INSTITUCIONAIS
+ PSICÓLOGA MILENA TOMAZ
+=========================================================*/
+
+
+/*=========================================================
+ VARIÁVEIS
+=========================================================*/
+
+:root {
+
+    --linho: #F4EFE8;
+    --aveia: #E8E0D3;
+    --white: #FCFBF8;
+
+    --olive: #7B7F59;
+    --forest: #4A5A49;
+
+    --terracotta: #B86E55;
+    --terracotta-light: #D9A18D;
+
+    --ocre: #C5A35A;
+    --brown: #6E5E4D;
+
+    --text: #43413D;
+    --gray: #8A867E;
+
+    --child-mustard: #F2C14E;
+
+    --shadow:
+        0 20px 45px rgba(0, 0, 0, .08);
+
+    --shadow-hover:
+        0 35px 65px rgba(0, 0, 0, .12);
+
+    --radius: 18px;
+
+    --transition: .45s ease;
+
+    --container: 1200px;
+}
+
+
+
+/*=========================================================
+ RESET
+=========================================================*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: var(--white);
+    color: var(--text);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+button {
+    font: inherit;
+}
+
+
+
+/*=========================================================
+ CONTAINER
+=========================================================*/
+
+.container {
+    width: min(
+        calc(100% - 40px),
+        var(--container)
+    );
+
+    margin: 0 auto;
+}
+
+
+
+/*=========================================================
+ TIPOGRAFIA
+=========================================================*/
+
+h1,
+h2,
+h3 {
+    font-family:
+        'Cormorant Garamond',
+        serif;
+
+    font-weight: 500;
+}
+
+
+p {
+    color: var(--text);
+}
+
+
+
+/*=========================================================
+ HEADER
+=========================================================*/
+
+#header {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    background:
+        rgba(248, 245, 240, .92);
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    z-index: 9999;
+
+    border-bottom:
+        1px solid rgba(74, 90, 73, .08);
+}
+
+
+.header-container {
+    min-height: 82px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 30px;
+}
+
+
+
+/*=========================================================
+ LOGO
+=========================================================*/
+
+.logo {
+    display: flex;
+    flex-direction: column;
+
+    color: var(--forest);
+
+    font-family:
+        'Cormorant Garamond',
+        serif;
+
+    font-size: 1rem;
+    line-height: .9;
+}
+
+
+.logo strong {
+    font-size: 1.65rem;
+    font-weight: 600;
+}
+
+
+
+/*=========================================================
+ MENU
+=========================================================*/
+
+.menu {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+
+
+.menu a {
+    position: relative;
+
+    color: var(--text);
+
+    font-size: .88rem;
+
+    transition: var(--transition);
+}
+
+
+.menu a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -7px;
+
+    width: 0;
+    height: 1px;
+
+    background: var(--terracotta);
+
+    transition: var(--transition);
+}
+
+
+.menu a:hover {
+    color: var(--terracotta);
+}
+
+
+.menu a:hover::after {
+    width: 100%;
+}
+
+
+
+/*=========================================================
+ BOTÃO HEADER
+=========================================================*/
+
+.btn-header {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 13px 23px;
+
+    background: var(--terracotta);
+    color: white;
+
+    border-radius: 50px;
+
+    font-size: .82rem;
+
+    transition: var(--transition);
+
+    box-shadow:
+        0 10px 25px rgba(184, 110, 85, .18);
+}
+
+
+.btn-header:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 15px 30px rgba(184, 110, 85, .25);
+}
+
+
+
+/*=========================================================
+ MENU MOBILE
+=========================================================*/
+
+.menu-mobile {
+    display: none;
+
+    width: 42px;
+    height: 42px;
+
+    border: 0;
+
+    background: transparent;
+
+    cursor: pointer;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-direction: column;
+
+    gap: 5px;
+}
+
+
+.menu-mobile span {
+    width: 24px;
+    height: 2px;
+
+    background: var(--forest);
+
+    transition: var(--transition);
+}
+
+
+.mobile-nav {
+    position: fixed;
+
+    top: 82px;
+    left: 0;
+
+    width: 100%;
+
+    padding: 25px;
+
+    background: var(--white);
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 18px;
+
+    z-index: 9998;
+
+    transform: translateY(-120%);
+    opacity: 0;
+
+    transition: var(--transition);
+
+    box-shadow:
+        0 20px 40px rgba(0, 0, 0, .08);
+}
+
+
+.mobile-nav.active {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+
+.mobile-nav a {
+    color: var(--forest);
+    font-size: 1rem;
+}
+
+
+
+/*=========================================================
+ HERO
+=========================================================*/
+
+.projects-hero {
+    min-height: 100vh;
+
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    background-image:
+        url("img/escolas.png");
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-attachment: fixed;
+
+    overflow: hidden;
+}
+
+
+
+/*=========================================================
+ OVERLAY
+=========================================================*/
+
+.projects-hero .overlay {
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        rgba(28, 30, 27, .65);
+
+    z-index: 1;
+}
+
+
+
+/*=========================================================
+ CONTEÚDO HERO
+=========================================================*/
+
+.projects-hero .container {
+    position: relative;
+    z-index: 3;
+}
+
+
+.projects-hero-content {
+    max-width: 920px;
+
+    margin: 0 auto;
+
+    padding:
+        120px 20px 100px;
+}
+
+
+.projects-hero-content .subtitle {
+    display: inline-block;
+
+    margin-bottom: 25px;
+
+    color:
+        rgba(255, 255, 255, .95);
+
+    letter-spacing: 4px;
+
+    text-transform: uppercase;
+
+    font-size: .8rem;
+}
+
+
+.projects-hero-content h1 {
+    max-width: 900px;
+
+    margin: 0 auto;
+
+    color: white;
+
+    font-size:
+        clamp(3rem, 6vw, 5.4rem);
+
+    line-height: .98;
+
+    font-weight: 500;
+}
+
+
+
+/*=========================================================
+ ONDA HERO
+=========================================================*/
+
+.hero-wave {
+    position: absolute;
+
+    left: 0;
+    bottom: -1px;
+
+    width: 100%;
+    height: 70px;
+
+    z-index: 4;
+
+    line-height: 0;
+
+    pointer-events: none;
+}
+
+
+.hero-wave svg {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+}
+
+
+.hero-wave path {
+    fill: var(--white);
+}
+
+
+
+/*=========================================================
+ TEXTO ABAIXO DO HERO
+=========================================================*/
+
+.projects-hero-intro {
+    position: relative;
+
+    background: var(--white);
+
+    padding:
+        80px 0 120px;
+
+    overflow: hidden;
+}
+
+
+.projects-hero-intro::before {
+    content: "";
+
+    position: absolute;
+
+    left: -5%;
+    top: -70px;
+
+    width: 110%;
+    height: 130px;
+
+    background: var(--white);
+
+    border-radius:
+        0 0 50% 50% /
+        0 0 75% 100%;
+}
+
+
+.projects-hero-intro-content {
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 850px;
+
+    margin: 0 auto;
+
+    text-align: center;
+}
+
+
+.projects-hero-intro-content p {
+    max-width: 780px;
+
+    margin: 0 auto 22px;
+
+    color: var(--text);
+
+    font-size: 1.03rem;
+
+    line-height: 1.85;
+}
+
+
+.projects-hero-intro-content p:last-child {
+    margin-bottom: 0;
+}
+
+
+
+/*=========================================================
+ TÍTULOS DE SEÇÃO
+=========================================================*/
+
+.section-title {
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 800px;
+
+    margin: 0 auto 70px;
+
+    text-align: center;
+}
+
+
+.section-title span {
+    display: inline-block;
+
+    margin-bottom: 18px;
+
+    color: var(--terracotta);
+
+    font-size: .76rem;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+}
+
+
+.section-title h2 {
+    margin: 0;
+
+    color: var(--forest);
+
+    font-size:
+        clamp(2.6rem, 5vw, 4.2rem);
+
+    line-height: 1.02;
+}
+
+
+
+/*=========================================================
+ PARA QUEM
+=========================================================*/
+
+.projects-audience {
+    position: relative;
+
+    background: var(--linho);
+
+    padding:
+        120px 0 140px;
+
+    overflow: hidden;
+}
+
+
+
+/*=========================================================
+ GRID DOS CARDS
+=========================================================*/
+
+.projects-audience-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 36px;
+
+    width: 100%;
+
+    max-width: 1120px;
+
+    margin: 0 auto;
+
+    align-items: stretch;
+}
+
+
+
+/*=========================================================
+ CARD
+=========================================================*/
+
+.projects-audience-card {
+    position: relative;
+
+    width: 100%;
+
+    height: 610px;
+    min-height: 610px;
+
+    padding:
+        78px 64px 65px;
+
+    background: var(--white);
+
+    overflow: hidden;
+
+    border-radius: 42px;
+
+    box-shadow:
+        0 20px 50px rgba(67, 65, 61, .07);
+
+    transition:
+        transform .45s ease,
+        box-shadow .45s ease;
+}
+
+
+.projects-audience-card:hover {
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 30px 65px rgba(67, 65, 61, .11);
+}
+
+
+
+/*=========================================================
+ NÚMERO
+=========================================================*/
+
+.projects-audience-number {
+    position: absolute;
+
+    top: 48px;
+    left: 48px;
+
+    width: 58px;
+    height: 58px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: var(--terracotta);
+
+    color: white;
+
+    font-family:
+        'Cormorant Garamond',
+        serif;
+
+    font-size: 1rem;
+
+    font-weight: 600;
+
+    z-index: 3;
+}
+
+
+
+/*=========================================================
+ CONTEÚDO
+=========================================================*/
+
+.projects-audience-content {
+    position: relative;
+
+    z-index: 2;
+
+    width: 100%;
+
+    max-width: 490px;
+
+    margin:
+        65px auto 0;
+}
+
+
+
+/*=========================================================
+ ETIQUETA
+=========================================================*/
+
+.projects-audience-label {
+    display: inline-block;
+
+    margin-bottom: 22px;
+
+    padding:
+        9px 17px;
+
+    border-radius: 50px;
+
+    background:
+        rgba(184, 110, 85, .10);
+
+    color: var(--terracotta);
+
+    font-family:
+        'Inter',
+        sans-serif;
+
+    font-size: .68rem;
+
+    font-weight: 600;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+}
+
+
+
+/*=========================================================
+ TÍTULO DOS CARDS
+=========================================================*/
+
+.projects-audience-card h3 {
+    margin:
+        0 0 24px;
+
+    font-family:
+        'Cormorant Garamond',
+        serif;
+
+    font-size:
+        clamp(2.5rem, 4vw, 3.5rem);
+
+    font-weight: 400;
+
+    line-height: .98;
+
+    color: #28445C;
+}
+
+
+
+/*=========================================================
+ TEXTO DE INTRODUÇÃO
+=========================================================*/
+
+.projects-audience-intro {
+    margin-bottom: 28px;
+
+    color: var(--text);
+
+    font-family:
+        'Inter',
+        sans-serif;
+
+    font-size: 1rem;
+
+    line-height: 1.8;
+}
+
+
+
+/*=========================================================
+ TEXTOS COMPLEMENTARES
+=========================================================*/
+
+.projects-audience-detail p {
+    margin-bottom: 22px;
+
+    color: var(--gray);
+
+    font-family:
+        'Inter',
+        sans-serif;
+
+    font-size: .98rem;
+
+    line-height: 1.85;
+}
+
+
+.projects-audience-detail p:last-child {
+    margin-bottom: 0;
+}
+
+
+
+/*=========================================================
+ ELEMENTO ORGÂNICO — CARD 1
+=========================================================*/
+
+.projects-audience-card:first-child::after {
+    content: "";
+
+    position: absolute;
+
+    width: 180px;
+    height: 180px;
+
+    left: -110px;
+    bottom: -75px;
+
+    background:
+        rgba(242, 193, 78, .13);
+
+    border-radius:
+        55% 45% 35% 65% /
+        45% 55% 65% 35%;
+
+    pointer-events: none;
+}
+
+
+
+/*=========================================================
+ ELEMENTO ORGÂNICO — CARD 2
+=========================================================*/
+
+.projects-audience-card:last-child::after {
+    content: "";
+
+    position: absolute;
+
+    width: 170px;
+    height: 170px;
+
+    right: -95px;
+    bottom: -70px;
+
+    background:
+        rgba(108, 162, 141, .10);
+
+    border-radius:
+        40% 60% 55% 45% /
+        60% 40% 50% 50%;
+
+    pointer-events: none;
+}
+
+
+
+/*=========================================================
+ ELEMENTO ORGÂNICO DA SEÇÃO
+=========================================================*/
+
+.projects-audience::before {
+    content: "";
+
+    position: absolute;
+
+    width: 260px;
+    height: 260px;
+
+    left: -150px;
+    top: 180px;
+
+    background:
+        rgba(242, 193, 78, .08);
+
+    border-radius:
+        55% 45% 60% 40% /
+        40% 60% 45% 55%;
+
+    pointer-events: none;
+}
+
+
+
+/*=========================================================
+  POSSIBILIDADES DE TRABALHO
+=========================================================*/
+
+.projects-possibilities {
+    position: relative;
+    padding: 110px 30px;
+    background: var(--child-mustard, #F2C14E);
+    overflow: hidden;
+}
+
+
+/*---------------------------------------------------------
+  MOLDURA PRINCIPAL
+---------------------------------------------------------*/
+
+.projects-possibilities-frame {
+    position: relative;
+    width: min(1120px, 100%);
+    margin: 0 auto;
+
+    padding: 58px 70px 64px;
+
+    background: rgba(252, 251, 248, 0.94);
+
+    border: 2px solid rgba(110, 94, 77, 0.18);
+    border-radius: 28px;
+
+    box-shadow:
+        0 18px 45px rgba(70, 55, 35, 0.08);
+}
+
+
+/*---------------------------------------------------------
+  CABEÇALHO
+---------------------------------------------------------*/
+
+.projects-possibilities-heading {
+    text-align: center;
+    margin-bottom: 52px;
+}
+
+
+/* Pequeno título acima */
+
+.projects-possibilities-heading .section-label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: var(--olive);
+    
+    font-family: 'Inter', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 600;
+
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+}
+
+
+/* Título principal */
+
+.projects-possibilities-heading h2 {
+    margin: 0;
+
+    color: var(--text);
+
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 3vw, 2.7rem);
+    font-weight: 500;
+
+    line-height: 1.05;
+}
+
+
+/*---------------------------------------------------------
+  LISTA
+---------------------------------------------------------*/
+
+.projects-possibilities-list {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    column-gap: 34px;
+    row-gap: 42px;
+
+    align-items: start;
+}
+
+
+/*---------------------------------------------------------
+  ITEM
+---------------------------------------------------------*/
+
+.projects-possibility {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 14px;
+
+    min-width: 0;
+
+    color: var(--text);
+
+    text-align: left;
+
+    transition:
+        transform var(--transition),
+        color var(--transition);
+}
+
+
+/*---------------------------------------------------------
+  ÍCONE
+---------------------------------------------------------*/
+
+.projects-possibility-icon {
+    flex: 0 0 54px;
+
+    width: 54px;
+    height: 54px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: var(--forest);
+
+    transition:
+        transform var(--transition),
+        color var(--transition);
+}
+
+
+.projects-possibility-icon svg {
+    width: 48px;
+    height: 48px;
+
+    display: block;
+
+    overflow: visible;
+}
+
+
+/*---------------------------------------------------------
+  TEXTO
+---------------------------------------------------------*/
+
+.projects-possibility p {
+    margin: 0;
+
+    color: var(--text);
+
+    font-family: 'Inter', sans-serif;
+    font-size: 0.91rem;
+    font-weight: 500;
+
+    line-height: 1.35;
+}
+
+
+/*---------------------------------------------------------
+  HOVER
+---------------------------------------------------------*/
+
+.projects-possibility:hover {
+    transform: translateY(-3px);
+}
+
+
+.projects-possibility:hover .projects-possibility-icon {
+    color: var(--terracotta);
+
+    transform: translateY(-2px);
+}
+
+
+/*---------------------------------------------------------
+  POSICIONAMENTO DA ÚLTIMA LINHA
+---------------------------------------------------------*/
+
+/*
+   Os 4 primeiros ficam na primeira linha.
+   Os 3 restantes ficam centralizados visualmente
+   na segunda linha.
+*/
+
+.projects-possibility:nth-child(5) {
+    grid-column: 1 / 2;
+    margin-left: auto;
+}
+
+
+.projects-possibility:nth-child(6) {
+    grid-column: 2 / 4;
+    justify-self: center;
+}
+
+
+.projects-possibility:nth-child(7) {
+    grid-column: 4 / 5;
+    margin-right: auto;
+}
+
+
+/*---------------------------------------------------------
+  DECORAÇÃO ORGÂNICA
+---------------------------------------------------------*/
+
+.projects-possibilities-frame::before {
+    content: "";
+
+    position: absolute;
+
+    width: 95px;
+    height: 95px;
+
+    right: -42px;
+    bottom: -45px;
+
+    border: 1px solid rgba(123, 127, 89, 0.20);
+
+    border-radius: 50%;
+}
+
+
+.projects-possibilities-frame::after {
+    content: "";
+
+    position: absolute;
+
+    width: 42px;
+    height: 42px;
+
+    left: -21px;
+    bottom: 42px;
+
+    border: 1px solid rgba(184, 110, 85, 0.20);
+
+    border-radius: 50%;
+}
+
+
+/*=========================================================
+  RESPONSIVIDADE — TABLET
+=========================================================*/
+
+@media (max-width: 900px) {
+
+    .projects-possibilities {
+        padding: 85px 24px;
+    }
+
+
+    .projects-possibilities-frame {
+        padding: 50px 40px 54px;
+    }
+
+
+    .projects-possibilities-list {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        column-gap: 30px;
+        row-gap: 34px;
+    }
+
+
+    .projects-possibility:nth-child(5),
+    .projects-possibility:nth-child(6),
+    .projects-possibility:nth-child(7) {
+        grid-column: auto;
+        margin-left: 0;
+        margin-right: 0;
+        justify-self: center;
+    }
+
+
+    .projects-possibility:nth-child(7) {
+        grid-column: 1 / -1;
+    }
+
+}
+
+
+/*=========================================================
+  RESPONSIVIDADE — CELULAR
+=========================================================*/
+
+@media (max-width: 600px) {
+
+    .projects-possibilities {
+        padding: 70px 16px;
+    }
+
+
+    .projects-possibilities-frame {
+        padding: 42px 24px 46px;
+
+        border-radius: 24px;
+    }
+
+
+    .projects-possibilities-heading {
+        margin-bottom: 38px;
+    }
+
+
+    .projects-possibilities-heading h2 {
+        font-size: 2rem;
+    }
+
+
+    .projects-possibilities-list {
+        grid-template-columns: 1fr;
+
+        gap: 28px;
+    }
+
+
+    .projects-possibility,
+    .projects-possibility:nth-child(5),
+    .projects-possibility:nth-child(6),
+    .projects-possibility:nth-child(7) {
+        grid-column: auto;
+
+        width: 100%;
+
+        justify-content: flex-start;
+
+        margin: 0;
+    }
+
+
+    .projects-possibility-icon {
+        flex-basis: 48px;
+
+        width: 48px;
+        height: 48px;
+    }
+
+
+    .projects-possibility-icon svg {
+        width: 43px;
+        height: 43px;
+    }
+
+
+    .projects-possibility p {
+        font-size: 0.88rem;
+    }
+
+
+    .projects-possibilities-number {
+        left: -8px;
+        top: -8px;
+    }
+
+}
+
+
+/*=========================================================
+  ACESSIBILIDADE
+=========================================================*/
+
+@media (prefers-reduced-motion: reduce) {
+
+    .projects-possibility,
+    .projects-possibility-icon {
+        transition: none;
+    }
+
+}
+
+
+
+/*=========================================================
+ PROCESSO
+=========================================================*/
+
+.projects-process {
+    position: relative;
+
+    padding:
+        150px 0 170px;
+
+    background:
+        var(--linho);
+
+    overflow: hidden;
+}
+
+
+.projects-process::before {
+    content: "";
+
+    position: absolute;
+
+    width: 420px;
+    height: 420px;
+
+    right: -220px;
+    top: 100px;
+
+    background:
+        rgba(184, 110, 85, .07);
+
+    border-radius:
+        45% 55% 35% 65% /
+        60% 40% 60% 40%;
+
+    transform:
+        rotate(20deg);
+}
+
+
+
+/*=========================================================
+ TÍTULO DO PROCESSO
+=========================================================*/
+
+.projects-process-title {
+    max-width: 850px;
+
+    margin-bottom: 80px;
+}
+
+
+.projects-process-title span {
+    padding:
+        10px 20px;
+
+    background:
+        rgba(184, 110, 85, .10);
+
+    border-radius: 50px;
+}
+
+
+.projects-process-title h2 {
+    font-size:
+        clamp(2.8rem, 5vw, 4.5rem);
+}
+
+
+.projects-process-title em {
+    color: var(--terracotta);
+
+    font-style: normal;
+}
+
+
+
+/*=========================================================
+ GRID DO PROCESSO
+=========================================================*/
+
+.projects-process-grid {
+    position: relative;
+
+    z-index: 2;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 24px;
+
+    align-items: start;
+
+    max-width: 1150px;
+
+    margin: 0 auto;
+}
+
+
+
+/*=========================================================
+ CARD DO PROCESSO
+=========================================================*/
+
+.projects-process-card {
+    position: relative;
+
+    min-height: 410px;
+
+    padding: 28px;
+
+    background:
+        rgba(255, 255, 255, .70);
+
+    border:
+        1px solid
+        rgba(74, 90, 73, .10);
+
+    box-shadow:
+        0 18px 40px rgba(74, 90, 73, .07);
+
+    border-radius:
+        30px 18px 34px 20px;
+
+    transition:
+        transform .45s ease,
+        box-shadow .45s ease;
+}
+
+
+.projects-process-card:nth-child(2) {
+    margin-top: 35px;
+
+    border-radius:
+        18px 34px 20px 30px;
+}
+
+
+.projects-process-card:nth-child(3) {
+    margin-top: 10px;
+
+    border-radius:
+        36px 20px 28px 18px;
+}
+
+
+.projects-process-card:nth-child(4) {
+    margin-top: 45px;
+
+    border-radius:
+        20px 30px 18px 36px;
+}
+
+
+.projects-process-card:hover {
+    transform:
+        translateY(-7px);
+
+    box-shadow:
+        0 28px 55px rgba(74, 90, 73, .11);
+}
+
+
+
+/*=========================================================
+ CABEÇALHO DO PROCESSO
+=========================================================*/
+
+.projects-process-header {
+    display: flex;
+
+    align-items: center;
+
+    gap: 17px;
+
+    margin-bottom: 35px;
+}
+
+
+
+/*=========================================================
+ NÚMERO DO PROCESSO
+=========================================================*/
+
+.projects-process-number {
+    flex-shrink: 0;
+
+    width: 55px;
+    height: 55px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+        var(--terracotta);
+
+    color: white;
+
+    font-family:
+        'Cormorant Garamond',
+        serif;
+
+    font-size: 1.15rem;
+}
+
+
+
+/*=========================================================
+ TEXTO DO CABEÇALHO
+=========================================================*/
+
+.projects-process-header small {
+    display: block;
+
+    margin-bottom: 4px;
+
+    color: var(--gray);
+
+    font-size: .65rem;
+
+    letter-spacing: 1.3px;
+
+    text-transform: uppercase;
+}
+
+
+.projects-process-header h3 {
+    margin: 0;
+
+    color: var(--forest);
+
+    font-size: 2rem;
+
+    line-height: 1;
+}
+
+
+
+/*=========================================================
+ CORPO DO PROCESSO
+=========================================================*/
+
+.projects-process-body {
+    position: relative;
+
+    padding:
+        27px 24px;
+
+    background:
+        var(--white);
+
+    border:
+        1px solid
+        rgba(74, 90, 73, .07);
+
+    border-radius:
+        22px 13px 25px 16px;
+
+    box-shadow:
+        0 12px 25px rgba(60, 50, 40, .07);
+
+    transform:
+        rotate(-.5deg);
+}
+
+
+.projects-process-card:nth-child(even)
+.projects-process-body {
+
+    transform:
+        rotate(.7deg);
+
+    border-radius:
+        13px 24px 16px 25px;
+}
+
+
+.projects-process-body p {
+    margin: 0;
+
+    color: var(--text);
+
+    font-size: .92rem;
+
+    line-height: 1.75;
+}
+
+
+
+/*=========================================================
+ ÍCONE DO PROCESSO
+=========================================================*/
+
+.projects-process-icon {
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 20px;
+
+    border-radius: 50%;
+
+    background:
+        var(--aveia);
+
+    color:
+        var(--forest);
+}
+
+
+.projects-process-icon i {
+    font-size: .95rem;
+}
+
+
+
+/*=========================================================
+ ÚLTIMO CARD DO PROCESSO
+=========================================================*/
+
+.projects-process-card-final {
+    background:
+        var(--forest);
+}
+
+
+.projects-process-card-final
+.projects-process-header h3 {
+    color: white;
+}
+
+
+.projects-process-card-final
+.projects-process-header small {
+    color:
+        rgba(255, 255, 255, .62);
+}
+
+
+.projects-process-card-final
+.projects-process-number {
+    background:
+        var(--ocre);
+
+    color:
+        var(--forest);
+}
+
+
+.projects-process-card-final
+.projects-process-body {
+    background:
+        var(--white);
+}
+
+
+
+/*=========================================================
+ CTA FINAL
+=========================================================*/
+
+.projects-cta {
+    position: relative;
+
+    padding:
+        120px 0;
+
+    background:
+        var(--terracotta);
+
+    overflow: hidden;
+}
+
+
+.projects-cta::before {
+    content: "";
+
+    position: absolute;
+
+    width: 420px;
+    height: 420px;
+
+    left: -210px;
+    bottom: -230px;
+
+    background:
+        rgba(255, 255, 255, .08);
+
+    border-radius:
+        55% 45% 60% 40% /
+        45% 55% 40% 60%;
+}
+
+
+.projects-cta::after {
+    content: "";
+
+    position: absolute;
+
+    width: 300px;
+    height: 300px;
+
+    right: -150px;
+    top: -160px;
+
+    background:
+        rgba(255, 255, 255, .08);
+
+    border-radius:
+        40% 60% 45% 55% /
+        55% 45% 60% 40%;
+}
+
+
+.projects-cta-content {
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 720px;
+
+    margin: 0 auto;
+
+    text-align: center;
+
+    color: white;
+}
+
+
+.projects-cta-content > span {
+    display: block;
+
+    margin-bottom: 15px;
+
+    color:
+        rgba(255, 255, 255, .75);
+
+    font-size: .75rem;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+}
+
+
+.projects-cta-content h2 {
+    margin-bottom: 5px;
+
+    color: white;
+
+    font-size:
+        clamp(2.8rem, 5vw, 4.5rem);
+
+    line-height: 1;
+}
+
+
+.projects-cta-content p {
+    margin-bottom: 35px;
+
+    color:
+        rgba(255, 255, 255, .9);
+
+    font-family:
+        'Cormorant Garamond',
+        serif;
+
+    font-size: 1.8rem;
+}
+
+
+.projects-cta .btn {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding:
+        17px 35px;
+
+    background: white;
+
+    color: var(--terracotta);
+
+    border-radius: 60px;
+
+    font-size: .9rem;
+
+    transition: var(--transition);
+
+    box-shadow:
+        0 15px 30px rgba(80, 40, 30, .12);
+}
+
+
+.projects-cta .btn:hover {
+    transform:
+        translateY(-5px);
+
+    box-shadow:
+        0 25px 40px rgba(80, 40, 30, .18);
+}
+
+
+
+/*=========================================================
+ FOOTER
+=========================================================*/
+
+.footer {
+    background:
+        #2E342E;
+
+    color:
+        #F7F3EE;
+}
+
+
+.footer-grid {
+    display: grid;
+
+    grid-template-columns:
+        1.5fr 1fr 1.2fr;
+
+    gap: 80px;
+
+    padding:
+        80px 0;
+}
+
+
+.footer-brand h3 {
+    display: flex;
+
+    flex-direction: column;
+
+    color: white;
+
+    font-family:
+        'Cormorant Garamond',
+        serif;
+
+    font-size: 1.2rem;
+
+    line-height: 1;
+}
+
+
+.footer-brand h3 strong {
+    font-size: 2rem;
+}
+
+
+.footer-brand p {
+    max-width: 320px;
+
+    margin-top: 25px;
+
+    color:
+        rgba(247, 243, 238, .72);
+
+    font-size: .9rem;
+
+    line-height: 1.8;
+}
+
+
+.footer h4 {
+    margin-bottom: 22px;
+
+    color: white;
+
+    font-size: .85rem;
+
+    letter-spacing: 1.5px;
+
+    text-transform: uppercase;
+}
+
+
+.footer-menu {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 11px;
+}
+
+
+.footer-menu a {
+    color:
+        rgba(247, 243, 238, .68);
+
+    font-size: .88rem;
+
+    transition: var(--transition);
+}
+
+
+.footer-menu a:hover {
+    color: white;
+
+    transform:
+        translateX(4px);
+}
+
+
+.footer-contact-list {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 15px;
+}
+
+
+.footer-contact-item {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+}
+
+
+.footer-contact-item i {
+    width: 20px;
+
+    color:
+        var(--ocre);
+}
+
+
+.footer-contact-item a {
+    color:
+        rgba(247, 243, 238, .72);
+
+    font-size: .88rem;
+
+    transition: var(--transition);
+}
+
+
+.footer-contact-item a:hover {
+    color: white;
+}
+
+
+.footer-bottom {
+    padding:
+        22px 0;
+
+    border-top:
+        1px solid rgba(255, 255, 255, .08);
+}
+
+
+.footer-bottom p {
+    color:
+        rgba(247, 243, 238, .48);
+
+    font-size: .75rem;
+
+    text-align: center;
+}
+
+
+
+/*=========================================================
+ RESPONSIVIDADE — 1100px
+=========================================================*/
+
+@media (max-width: 1100px) {
+
+    .projects-process-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+
+    .projects-process-card:nth-child(2),
+    .projects-process-card:nth-child(3),
+    .projects-process-card:nth-child(4) {
+        margin-top: 0;
+    }
+
+
+    .projects-process-card:nth-child(2),
+    .projects-process-card:nth-child(4) {
+        transform:
+            translateY(25px);
+    }
+
+
+    .projects-possibilities-list {
+        min-height: 350px;
+    }
+
+
+    .projects-possibility {
+        min-height: 350px;
+    }
+
+}
+
+
+
+/*=========================================================
+ RESPONSIVIDADE — 900px
+=========================================================*/
+
+@media (max-width: 900px) {
+
+    .menu {
+        display: none;
+    }
+
+
+    .btn-header {
+        display: none;
+    }
+
+
+    .menu-mobile {
+        display: flex;
+    }
+
+
+    .projects-audience-grid {
+        grid-template-columns: 1fr;
+
+        max-width: 700px;
+    }
+
+
+    .projects-audience-card {
+        height: auto;
+
+        min-height: 610px;
+    }
+
+
+    .projects-possibilities-list {
+        display: grid;
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        min-height: auto;
+
+        gap: 18px;
+    }
+
+
+    .projects-possibility,
+    .projects-possibility:hover {
+
+        min-height: 330px;
+
+        flex: none;
+
+        transform: none;
+    }
+
+
+    .projects-possibility p,
+    .projects-possibility:hover p {
+
+        transform: none;
+
+        font-size: 2rem;
+
+        max-width: 100%;
+    }
+
+
+    .projects-process-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+
+    .projects-process-card:nth-child(2),
+    .projects-process-card:nth-child(4) {
+
+        transform:
+            translateY(25px);
+    }
+
+
+    .footer-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 50px;
+    }
+
+
+    .footer-brand {
+        grid-column: 1 / -1;
+    }
+
+}
+
+
+
+/*=========================================================
+ RESPONSIVIDADE — 700px
+=========================================================*/
+
+@media (max-width: 700px) {
+
+    .container {
+        width:
+            min(
+                calc(100% - 30px),
+                var(--container)
+            );
+    }
+
+
+    .header-container {
+        min-height: 72px;
+    }
+
+
+    .mobile-nav {
+        top: 72px;
+    }
+
+
+    .projects-hero {
+        min-height: 88vh;
+
+        background-attachment:
+            scroll;
+    }
+
+
+    .projects-hero-content {
+        padding:
+            100px 10px 80px;
+    }
+
+
+    .projects-hero-content h1 {
+        font-size:
+            clamp(2.7rem, 12vw, 4rem);
+    }
+
+
+    .projects-hero-content .subtitle {
+        font-size: .68rem;
+
+        letter-spacing:
+            2.5px;
+    }
+
+
+    .hero-wave {
+        height: 55px;
+    }
+
+
+    .projects-hero-intro {
+        padding:
+            65px 0 90px;
+    }
+
+
+    .projects-hero-intro::before {
+        top: -45px;
+
+        height: 80px;
+    }
+
+
+    .projects-hero-intro-content p {
+        font-size: .95rem;
+
+        line-height: 1.75;
+    }
+
+
+    .projects-audience {
+        padding:
+            105px 0 110px;
+    }
+
+
+    .section-title {
+        margin-bottom: 50px;
+    }
+
+
+    .section-title h2 {
+        font-size:
+            clamp(2.4rem, 10vw, 3.3rem);
+    }
+
+
+    .projects-audience-card {
+        min-height: auto;
+
+        padding:
+            105px 35px 50px;
+    }
+
+
+    .projects-audience-number {
+        top: 32px;
+        left: 30px;
+
+        width: 52px;
+        height: 52px;
+    }
+
+
+    .projects-audience-content {
+        margin-top: 0;
+    }
+
+
+    .projects-audience-card h3 {
+        font-size:
+            2.7rem;
+    }
+
+
+    .projects-possibilities {
+        padding:
+            95px 0 105px;
+    }
+
+
+    .projects-possibilities-title {
+        margin-bottom: 45px;
+    }
+
+
+    .projects-possibilities-title h2 {
+        font-size:
+            3rem;
+    }
+
+
+    .projects-possibilities-list {
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 15px;
+    }
+
+
+    .projects-possibility,
+    .projects-possibility:hover {
+
+        min-height: 220px;
+
+        padding:
+            23px;
+
+        border-radius:
+            24px;
+    }
+
+
+    .projects-possibility p,
+    .projects-possibility:hover p {
+
+        font-size:
+            1.7rem;
+
+        line-height:
+            1.05;
+    }
+
+
+    .projects-process {
+        padding:
+            105px 0 120px;
+    }
+
+
+    .projects-process-title {
+        margin-bottom:
+            55px;
+    }
+
+
+    .projects-process-grid {
+        grid-template-columns: 1fr;
+
+        gap: 25px;
+    }
+
+
+    .projects-process-card,
+    .projects-process-card:nth-child(2),
+    .projects-process-card:nth-child(3),
+    .projects-process-card:nth-child(4) {
+
+        min-height: auto;
+
+        margin-top: 0;
+
+        transform: none;
+    }
+
+
+    .projects-process-card-final {
+        margin-top: 5px !important;
+    }
+
+
+    .projects-cta {
+        padding:
+            95px 0;
+    }
+
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+
+        padding:
+            65px 0;
+    }
+
+
+    .footer-brand {
+        grid-column: auto;
+    }
+
+}
+
+
+
+/*=========================================================
+ RESPONSIVIDADE — 500px
+=========================================================*/
+
+@media (max-width: 500px) {
+
+    .projects-possibilities-list {
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .projects-possibility,
+    .projects-possibility:hover {
+        min-height:
+            180px;
+    }
+
+
+    .projects-possibility p,
+    .projects-possibility:hover p {
+        font-size:
+            1.8rem;
+    }
+
+
+    .projects-process-card {
+        padding:
+            23px;
+    }
+
+
+    .projects-process-header {
+        gap: 13px;
+    }
+
+
+    .projects-process-number {
+        width: 48px;
+        height: 48px;
+    }
+
+
+    .projects-process-header h3 {
+        font-size:
+            1.8rem;
+    }
+
+
+    .projects-cta-content p {
+        font-size:
+            1.5rem;
+    }
+
+}
+
+
+
+/*=========================================================
+ ACESSIBILIDADE
+=========================================================*/
+
+:focus-visible {
+    outline:
+        3px solid var(--ocre);
+
+    outline-offset:
+        4px;
+}
+
+
+
+/*=========================================================
+ REDUÇÃO DE MOVIMENTO
+=========================================================*/
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+
+    *,
+    *::before,
+    *::after {
+
+        transition-duration:
+            .01ms !important;
+
+        animation-duration:
+            .01ms !important;
+
+        animation-iteration-count:
+            1 !important;
+    }
+
+}
