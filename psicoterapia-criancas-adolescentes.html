@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 
 <html lang="pt-BR">
@@ -15,11 +14,11 @@
 
     <meta
         name="description"
-        content="Psicoterapia para crianças e adolescentes de 6 a 17 anos."
+        content="Psicoterapia para crianças e adolescentes de 5 a 17 anos."
     >
 
     <title>
-        Psicoterapia para Crianças e Adolescentes | Psicóloga Milena Tomaz
+        Psicoterapia para crianças e adolescentes | Psicóloga Milena Tomaz
     </title>
 
 
@@ -118,10 +117,12 @@
             <!-- BOTÃO PRINCIPAL -->
 
             <a
-                href="index.html#contato"
+                href="https://wa.me/5511981116469"
                 class="btn-header"
+                target="_blank"
+                rel="noopener noreferrer"
             >
-                Agendar Consulta
+                Agendar Primeira Conversa
             </a>
 
 
@@ -194,47 +195,24 @@
 
 <section class="children-hero">
 
-    <!-- IMAGEM DE FUNDO -->
-    <div class="children-hero-background" aria-hidden="true"></div>
+    <!-- IMAGEM ÚNICA — título e chamada já desenhados na arte,
+         trocando entre versão desktop e mobile por tamanho de tela -->
+    <picture>
 
-    <!-- CAMADA SUTIL PARA LEITURA DO TEXTO -->
-    <div class="children-hero-overlay" aria-hidden="true"></div>
+        <source media="(max-width: 650px)" srcset="img/hero-criancas-mobile.png">
 
+        <img
+            src="img/hero-criancas-desktop.png"
+            alt="Psicoterapia para crianças e adolescentes. Atendimento dos 5 aos 17 anos."
+            class="children-hero-image"
+            fetchpriority="high"
+        >
 
-    <!-- CONTEÚDO -->
-    <div class="container children-hero-container">
+    </picture>
 
-        <div class="children-hero-content">
-
-            <span class="children-hero-tag">
-                <span class="children-hero-line"></span>
-                Psicoterapia
-                <span class="children-hero-line"></span>
-            </span>
-
-
-            <h1>
-                Psicoterapia para
-                <br>
-                Crianças e Adolescentes
-            </h1>
-
-
-            <p class="children-age">
-                Atendimento dos 6 aos 17 anos.
-            </p>
-
-
-            <div class="children-hero-decoration" aria-hidden="true">
-                <span></span>
-                <i class="fa-solid fa-sun"></i>
-                <span></span>
-            </div>
-
-        </div>
-
-    </div>
-
+    <h1 class="visually-hidden">
+        Psicoterapia para crianças e adolescentes
+    </h1>
 
 </section>
 
@@ -253,7 +231,7 @@
             </span>
 
             <h2>
-                Alguns sinais de que é hora de buscar acompanhamento:
+                Situações que podem indicar a necessidade de acompanhamento
             </h2>
 
         </div>
@@ -265,10 +243,6 @@
             <article class="children-trail-item">
 
                 <div class="children-trail-top">
-
-                    <span class="children-trail-number">
-                        01
-                    </span>
 
                     <span class="children-trail-icon">
                         <i class="fa-solid fa-arrows-rotate" aria-hidden="true"></i>
@@ -290,10 +264,6 @@
 
                 <div class="children-trail-top">
 
-                    <span class="children-trail-number">
-                        02
-                    </span>
-
                     <span class="children-trail-icon">
                         <i class="fa-solid fa-cloud" aria-hidden="true"></i>
                     </span>
@@ -314,10 +284,6 @@
 
                 <div class="children-trail-top">
 
-                    <span class="children-trail-number">
-                        03
-                    </span>
-
                     <span class="children-trail-icon">
                         <i class="fa-solid fa-book-open" aria-hidden="true"></i>
                     </span>
@@ -327,7 +293,7 @@
                 <div class="children-trail-line"></div>
 
                 <p>
-                    dificuldades escolares ou sociais
+                    dificuldades escolares ou de socialização
                 </p>
 
             </article>
@@ -337,10 +303,6 @@
             <article class="children-trail-item">
 
                 <div class="children-trail-top">
-
-                    <span class="children-trail-number">
-                        04
-                    </span>
 
                     <span class="children-trail-icon">
                         <i class="fa-solid fa-house" aria-hidden="true"></i>
@@ -362,10 +324,6 @@
 
                 <div class="children-trail-top">
 
-                    <span class="children-trail-number">
-                        05
-                    </span>
-
                     <span class="children-trail-icon">
                         <i class="fa-solid fa-shuffle" aria-hidden="true"></i>
                     </span>
@@ -375,7 +333,7 @@
                 <div class="children-trail-line"></div>
 
                 <p>
-                    separações, perdas e mudanças
+                    separações, perdas e outras mudanças importantes.
                 </p>
 
             </article>
@@ -385,10 +343,6 @@
             <article class="children-trail-item">
 
                 <div class="children-trail-top">
-
-                    <span class="children-trail-number">
-                        06
-                    </span>
 
                     <span class="children-trail-icon">
                         <i class="fa-solid fa-wind" aria-hidden="true"></i>
@@ -410,10 +364,6 @@
 
                 <div class="children-trail-top">
 
-                    <span class="children-trail-number">
-                        07
-                    </span>
-
                     <span class="children-trail-icon">
                         <i class="fa-regular fa-face-smile" aria-hidden="true"></i>
                     </span>
@@ -429,6 +379,19 @@
             </article>
 
         </div>
+
+
+    </div>
+
+
+    <!-- FAIXA DO PÔR DO SOL — LARGURA TOTAL -->
+    <div class="children-signs-highlight">
+
+        <p class="children-signs-highlight-text">
+            Cada criança e adolescente expressa o sofrimento de uma maneira.
+            Mais do que um sinal isolado, é importante observar mudanças,
+            sua intensidade e os impactos que produzem na vida cotidiana.
+        </p>
 
     </div>
 
@@ -469,7 +432,7 @@
                         </p>
 
                         <p>
-                            Quando necessário, esse primeiro momento pode acontecer ao longo de mais de um encontro.
+                            Quando necessário, esse primeiro momento, com a família, pode acontecer ao longo de mais de um encontro.
                         </p>
 
                         <p>
@@ -557,20 +520,7 @@
                 <div class="children-family-content">
 
 
-                    <div class="children-family-decoration" aria-hidden="true">
-
-                        <span></span>
-                        <span></span>
-                        <span></span>
-
-                    </div>
-
-
                     <div class="children-family-text">
-
-                        <span class="section-tag">
-                            A família também faz parte do processo
-                        </span>
 
                         <h2>
                             A família também faz parte do processo
@@ -614,8 +564,10 @@
                     </h2>
 
                     <a
-                        href="index.html#contato"
+                        href="https://wa.me/5511981116469"
                         class="btn"
+                        target="_blank"
+                        rel="noopener noreferrer"
                     >
                         Conversar sobre o atendimento
                     </a>
@@ -726,7 +678,7 @@
                         <i class="fa-brands fa-whatsapp"></i>
 
                         <a
-                            href="https://wa.me/5500000000000"
+                            href="https://wa.me/5511981116469"
                             target="_blank"
                             rel="noopener noreferrer"
                         >
@@ -740,23 +692,8 @@
 
                         <i class="fa-regular fa-envelope"></i>
 
-                        <a href="mailto:contato@psimilenatomaz.com.br">
-                            contato@psimilenatomaz.com.br
-                        </a>
-
-                    </div>
-
-
-                    <div class="footer-contact-item">
-
-                        <i class="fa-brands fa-instagram"></i>
-
-                        <a
-                            href="#"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            Instagram
+                        <a href="mailto:milenamcp1@outlook.com">
+                            milenamcp1@outlook.com
                         </a>
 
                     </div>
@@ -767,7 +704,7 @@
                         <i class="fa-brands fa-tiktok"></i>
 
                         <a
-                            href="#"
+                            href="https://www.tiktok.com/@milenatomaz.psi?_r=1&amp;_t=ZS-99oEIDYCB5I"
                             target="_blank"
                             rel="noopener noreferrer"
                         >
@@ -782,7 +719,7 @@
                         <i class="fa-brands fa-linkedin"></i>
 
                         <a
-                            href="#"
+                            href="https://www.linkedin.com/in/milena-tomaz-0a492913b?utm_source=share_via&amp;utm_content=profile&amp;utm_medium=member_android"
                             target="_blank"
                             rel="noopener noreferrer"
                         >
@@ -806,8 +743,15 @@
             <div class="container">
 
                 <p>
-                    © 2026 Psicóloga Milena Tomaz.
-                    Todos os direitos reservados.
+                    © Psicóloga Milena Tomaz | CRP 06/223740 | Todos os direitos reservados.
+                </p>
+
+                <p class="footer-credit">
+                    Desenvolvido por
+                    <a href="https://wa.me/5511941161749?text=Oi%21%20Vi%20o%20site%20da%20Milena%20e%20queria%20fazer%20uma%20cota%C3%A7%C3%A3o."
+                        target="_blank" rel="noopener noreferrer">
+                        Amabile Ferreira
+                    </a>
                 </p>
 
             </div>
@@ -827,4 +771,3 @@
 </body>
 
 </html>
-```

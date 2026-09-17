@@ -39,32 +39,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     /* ======================================================
-       HEADER AO ROLAR
-    ====================================================== */
-
-    const header = document.getElementById("header");
-
-    function updateHeader() {
-
-        if (!header) return;
-
-        if (window.scrollY > 80) {
-
-            header.classList.add("scrolled");
-
-        } else {
-
-            header.classList.remove("scrolled");
-
-        }
-
-    }
-
-    window.addEventListener("scroll", updateHeader);
-
-    updateHeader();
-
-    /* ======================================================
        FAQ ACCORDION
     ====================================================== */
 
@@ -75,6 +49,8 @@ document.addEventListener("DOMContentLoaded", () => {
         const button = item.querySelector(".accordion-header");
         const content = item.querySelector(".accordion-content");
 
+        button.setAttribute("aria-expanded", "false");
+
         button.addEventListener("click", () => {
 
             const opened = item.classList.contains("active");
@@ -83,6 +59,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 i.classList.remove("active");
 
+                i.querySelector(".accordion-header").setAttribute("aria-expanded", "false");
+
                 i.querySelector(".accordion-content").style.maxHeight = null;
 
             });
@@ -90,6 +68,8 @@ document.addEventListener("DOMContentLoaded", () => {
             if (!opened) {
 
                 item.classList.add("active");
+
+                button.setAttribute("aria-expanded", "true");
 
                 content.style.maxHeight = content.scrollHeight + "px";
 
@@ -123,36 +103,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     }
 
-    window.addEventListener("scroll", revealOnScroll);
-
-    revealOnScroll();
-
-    /* ======================================================
-       CARDS
-    ====================================================== */
-
-    const cards = document.querySelectorAll(".service-card");
-
-    function revealCards() {
-
-        const trigger = window.innerHeight * 0.90;
-
-        cards.forEach(card => {
-
-            if (card.getBoundingClientRect().top < trigger) {
-
-                card.classList.add("show");
-
-            }
-
-        });
-
-    }
-
-    window.addEventListener("scroll", revealCards);
-
-    revealCards();
-
     /* ======================================================
        PARALLAX
     ====================================================== */
@@ -168,8 +118,6 @@ document.addEventListener("DOMContentLoaded", () => {
         hero.style.backgroundPositionY = offset * 0.45 + "px";
 
     }
-
-    window.addEventListener("scroll", parallax);
 
     /* ======================================================
        SCROLL SPY
@@ -212,8 +160,38 @@ document.addEventListener("DOMContentLoaded", () => {
 
     }
 
-    window.addEventListener("scroll", activeMenu);
+    /* ======================================================
+       LOOP ÚNICO DE SCROLL
+       Agrupa as leituras/escritas de scroll (reveal, parallax,
+       menu ativo) num único listener, executado no máximo uma
+       vez por frame via requestAnimationFrame — evita reflows
+       repetidos quando cada efeito tinha seu próprio listener.
+    ====================================================== */
 
+    let scrollScheduled = false;
+
+    function onScroll() {
+
+        if (scrollScheduled) return;
+
+        scrollScheduled = true;
+
+        window.requestAnimationFrame(() => {
+
+            revealOnScroll();
+            parallax();
+            activeMenu();
+
+            scrollScheduled = false;
+
+        });
+
+    }
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+
+    revealOnScroll();
+    parallax();
     activeMenu();
 
     /* ======================================================

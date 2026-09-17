@@ -23,13 +23,13 @@ body {
     font-family: 'Inter', sans-serif;
     background: var(--white);
     color: var(--text);
-    line-height: 1.7;
+    line-height: 1.6;
     overflow-x: hidden;
 }
 
 img {
     display: block;
-    width: 100%;
+    max-width: 100%;
 }
 
 a {
@@ -45,7 +45,7 @@ button {
     border: none;
     background: none;
     cursor: pointer;
-    font-family: inherit;
+    font: inherit;
 }
 
 
@@ -72,15 +72,16 @@ VARIÁVEIS
     /* CORES DE DESTAQUE */
 
     --terracotta: #B86E55;
-    --terracotta-light: #E8CEC4;
+    --terracotta-light: #D9A18D;
 
     --ocre: #C5A35A;
     --ocre-light: #E9DEC3;
 
 
-    /* MARROM */
+    /* MARROM / NEUTRO */
 
     --brown: #6E5E4D;
+    --gray: #8A867E;
 
 
     /* TEXTO */
@@ -90,16 +91,16 @@ VARIÁVEIS
 
     /* SOMBRAS */
 
-    --shadow: 0 20px 45px rgba(74, 90, 73, .10);
+    --shadow: 0 20px 45px rgba(0, 0, 0, .08);
 
-    --shadow-hover: 0 30px 65px rgba(74, 90, 73, .16);
+    --shadow-hover: 0 35px 65px rgba(0, 0, 0, .12);
 
 
     /* ESTRUTURA */
 
-    --radius: 22px;
+    --radius: 18px;
 
-    --transition: .35s ease;
+    --transition: .45s ease;
 
     --container: 1200px;
 
@@ -120,6 +121,12 @@ h4 {
     color: var(--forest);
 
     line-height: 1.2;
+
+    font-weight: 500;
+
+}
+
+h4 {
 
     font-weight: 600;
 
@@ -199,7 +206,7 @@ CONTAINER
 
 .container {
 
-    width: min(92%, var(--container));
+    width: min(calc(100% - 40px), var(--container));
 
     margin: auto;
 
@@ -2790,6 +2797,7 @@ REDUÇÃO DE MOVIMENTO
 
     /* Corrigido o valor inválido #1D3S57 para um azul válido */
     --child-blue: #1D3D57;
+    --child-blue-soft: #3E6B86;
 
     --child-light: #F7F9F3;
     --child-beige: #E9E1D6;
@@ -2801,480 +2809,43 @@ REDUÇÃO DE MOVIMENTO
 }
 
 
-/* =========================================================
-   CONTAINER
-   ========================================================= */
-
-.children-page .container {
-    width: min(1200px, calc(100% - 48px));
-    margin: 0 auto;
-}
 
 
 /* =========================================================
    HERO — CRIANÇAS E ADOLESCENTES
-   IMAGEM + SOL INTEGRADO
+   Imagem única (título e chamada já desenhados na arte),
+   trocada por tamanho de tela via <picture>. Exibida por
+   inteiro, sem cortes, para nunca perder texto nas bordas.
 ========================================================= */
 
 .children-hero {
     position: relative;
-
-    min-height: calc(100vh - 92px);
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    overflow: hidden;
-
+    padding: 0;
+    line-height: 0;
     background: #E9E1D6;
 }
 
-
-/* =========================================================
-   IMAGEM DE FUNDO
-========================================================= */
-
-.children-hero-background {
-    position: absolute;
-
-    inset: 0;
-
-    z-index: 0;
-
-    background-image: url("img/hero-criancas.png");
-
-    background-size: cover;
-
-    background-position: center center;
-
-    background-repeat: no-repeat;
-}
-
-
-/* =========================================================
-   CAMADA DE LEITURA
-========================================================= */
-
-.children-hero-overlay {
-    position: absolute;
-
-    inset: 0;
-
-    z-index: 1;
-
-    /*
-       Não queremos escurecer a fotografia inteira.
-       A camada é apenas uma película muito suave
-       para integrar o texto à imagem.
-    */
-
-    background:
-        radial-gradient(
-            ellipse at center,
-            rgba(247, 249, 243, 0.18) 0%,
-            rgba(247, 249, 243, 0.06) 38%,
-            rgba(29, 61, 87, 0.10) 100%
-        );
-}
-
-
-/* =========================================================
-   CONTAINER
-========================================================= */
-
-.children-hero-container {
-    position: relative;
-
-    z-index: 5;
-
-    min-height: calc(100vh - 92px);
-
+.children-hero-image {
+    display: block;
     width: 100%;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    text-align: center;
+    height: auto;
 }
 
 
 /* =========================================================
-   CONTEÚDO
+   UTILITÁRIO — CONTEÚDO SÓ PARA LEITORES DE TELA
 ========================================================= */
 
-.children-hero-content {
-    position: relative;
-
-    width: min(760px, 92%);
-
-    display: flex;
-
-    flex-direction: column;
-
-    align-items: center;
-
-    justify-content: center;
-
-    /*
-       O conteúdo fica centralizado
-       exatamente sobre o sol da imagem.
-    */
-
-    padding: 70px 50px;
-}
-
-
-/* =========================================================
-   ETIQUETA "PSICOTERAPIA"
-========================================================= */
-
-.children-hero-tag {
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    gap: 12px;
-
-    margin-bottom: 22px;
-
-    color: #4F8F7A;
-
-    font-family: 'Inter', sans-serif;
-
-    font-size: 0.72rem;
-
-    font-weight: 600;
-
-    letter-spacing: 0.18em;
-
-    text-transform: uppercase;
-}
-
-
-.children-hero-line {
-    display: block;
-
-    width: 30px;
-
-    height: 1px;
-
-    background: #F2C14E;
-
-    border-radius: 999px;
-}
-
-
-/* =========================================================
-   TÍTULO
-========================================================= */
-
-.children-hero h1 {
-    max-width: 700px;
-
-    margin: 0;
-
-    color: #1D3D57;
-
-    font-family: 'Cormorant Garamond', serif;
-
-    font-size: clamp(
-        3.5rem,
-        6vw,
-        5.8rem
-    );
-
-    font-weight: 500;
-
-    line-height: 0.92;
-
-    letter-spacing: -0.025em;
-
-    text-wrap: balance;
-}
-
-
-/* =========================================================
-   SUBTÍTULO
-========================================================= */
-
-.children-hero .children-age {
-    margin-top: 25px;
-
-    color: #394F54;
-
-    font-family: 'Inter', sans-serif;
-
-    font-size: 0.98rem;
-
-    font-weight: 400;
-
-    line-height: 1.6;
-}
-
-
-/* =========================================================
-   PEQUENO ELEMENTO DECORATIVO
-========================================================= */
-
-.children-hero-decoration {
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    gap: 9px;
-
-    margin-top: 23px;
-
-    color: #E07A5F;
-}
-
-
-.children-hero-decoration span {
-    width: 28px;
-
-    height: 1px;
-
-    background: #E07A5F;
-
-    opacity: 0.8;
-}
-
-
-.children-hero-decoration i {
-    font-size: 0.65rem;
-
-    color: #E07A5F;
-}
-
-
-/* =========================================================
-   INDICADOR DE SCROLL
-========================================================= */
-
-.children-hero-scroll {
+.visually-hidden {
     position: absolute;
-
-    z-index: 6;
-
-    left: 50%;
-
-    bottom: 22px;
-
-    transform: translateX(-50%);
-
-    display: flex;
-
-    flex-direction: column;
-
-    align-items: center;
-
-    gap: 7px;
-
-    color: #1D3D57;
-
-    opacity: 0.72;
-
-    text-align: center;
-}
-
-
-.children-hero-scroll span {
-    display: block;
-
     width: 1px;
-
-    height: 28px;
-
-    background: #1D3D57;
-
-    animation: childrenScroll 2s ease-in-out infinite;
-}
-
-
-.children-hero-scroll small {
-    font-family: 'Inter', sans-serif;
-
-    font-size: 0.58rem;
-
-    font-weight: 600;
-
-    letter-spacing: 0.14em;
-
-    text-transform: uppercase;
-}
-
-
-@keyframes childrenScroll {
-
-    0%,
-    100% {
-        transform: translateY(0);
-
-        opacity: 0.45;
-    }
-
-    50% {
-        transform: translateY(5px);
-
-        opacity: 1;
-    }
-}
-
-
-/* =========================================================
-   TABLET
-========================================================= */
-
-@media (max-width: 900px) {
-
-    .children-hero {
-        min-height: calc(100vh - 80px);
-    }
-
-
-    .children-hero-container {
-        min-height: calc(100vh - 80px);
-    }
-
-
-    .children-hero-background {
-        background-position: center center;
-    }
-
-
-    .children-hero-content {
-        width: min(700px, 94%);
-
-        padding: 65px 35px;
-    }
-
-
-    .children-hero h1 {
-        font-size: clamp(
-            3.2rem,
-            8vw,
-            5rem
-        );
-    }
-
-}
-
-
-/* =========================================================
-   CELULAR
-========================================================= */
-
-@media (max-width: 650px) {
-
-    .children-hero {
-        min-height: 78vh;
-    }
-
-
-    .children-hero-container {
-        min-height: 78vh;
-    }
-
-
-    .children-hero-background {
-        /*
-           No celular deslocamos um pouco a fotografia
-           para preservar o sol e o ambiente.
-        */
-
-        background-position: 56% center;
-    }
-
-
-    .children-hero-overlay {
-        background:
-            radial-gradient(
-                ellipse at center,
-                rgba(247, 249, 243, 0.20) 0%,
-                rgba(247, 249, 243, 0.08) 42%,
-                rgba(29, 61, 87, 0.10) 100%
-            );
-    }
-
-
-    .children-hero-content {
-        width: 94%;
-
-        padding: 55px 22px;
-    }
-
-
-    .children-hero-tag {
-        gap: 9px;
-
-        margin-bottom: 17px;
-
-        font-size: 0.62rem;
-
-        letter-spacing: 0.15em;
-    }
-
-
-    .children-hero-line {
-        width: 21px;
-    }
-
-
-    .children-hero h1 {
-        max-width: 360px;
-
-        font-size: clamp(
-            2.8rem,
-            12vw,
-            4rem
-        );
-
-        line-height: 0.94;
-    }
-
-
-    .children-hero .children-age {
-        margin-top: 19px;
-
-        font-size: 0.86rem;
-    }
-
-
-    .children-hero-decoration {
-        margin-top: 18px;
-    }
-
-
-    .children-hero-decoration span {
-        width: 21px;
-    }
-
-
-    .children-hero-scroll {
-        display: none;
-    }
-
-}
-
-
-/* =========================================================
-   ACESSIBILIDADE
-========================================================= */
-
-@media (prefers-reduced-motion: reduce) {
-
-    .children-hero-scroll span {
-        animation: none;
-    }
-
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
 }
 
 
@@ -3480,32 +3051,6 @@ REDUÇÃO DE MOVIMENTO
 /* =========================================================
    NÚMERO
 ========================================================= */
-
-.children-trail-number {
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    width: 38px;
-    height: 38px;
-
-    border-radius: 50%;
-
-    background: var(--child-blue);
-
-    color: white;
-
-    font-size: 0.68rem;
-
-    font-weight: 700;
-
-    letter-spacing: 0.04em;
-
-    box-shadow:
-        0 0 0 7px var(--child-beige);
-}
-
 
 /* =========================================================
    ÍCONE
@@ -3752,14 +3297,6 @@ REDUÇÃO DE MOVIMENTO
 
     .children-trail-item:nth-child(even):hover {
         transform: translateY(15px);
-    }
-
-
-    .children-trail-number {
-        width: 34px;
-        height: 34px;
-
-        font-size: 0.62rem;
     }
 
 
@@ -4146,38 +3683,6 @@ REDUÇÃO DE MOVIMENTO
 
 @media (max-width: 1000px) {
 
-    .children-hero {
-        min-height: auto;
-
-        padding: 130px 0 100px;
-    }
-
-
-    .children-hero-container {
-        grid-template-columns: 1fr;
-
-        gap: 60px;
-    }
-
-
-    .children-hero-content {
-        max-width: 720px;
-    }
-
-
-    .children-hero-visual {
-        max-width: 560px;
-
-        margin: 0 auto;
-    }
-
-
-    .children-signs-grid {
-        grid-template-columns:
-            repeat(2, 1fr);
-    }
-
-
     .children-process-grid {
         grid-template-columns: 1fr;
     }
@@ -4195,76 +3700,11 @@ REDUÇÃO DE MOVIMENTO
 
 @media (max-width: 650px) {
 
-    .children-page .container {
-        width: min(100% - 32px, 1200px);
-    }
-
-
-    /* HERO */
-
-    .children-hero {
-        padding: 110px 0 80px;
-    }
-
-
-    .children-hero h1 {
-        font-size: clamp(2.8rem, 14vw, 4rem);
-
-        line-height: 0.98;
-    }
-
-
-    .children-age {
-        font-size: 1rem;
-    }
-
-
-    .children-hero-visual::before {
-        width: 280px;
-        height: 280px;
-    }
-
-
-    .children-sun {
-        width: 65px;
-        height: 65px;
-
-        top: -20px;
-        right: 0;
-    }
-
-
     /* SINAIS */
-
-    .children-signs {
-        padding: 100px 0 90px;
-    }
-
 
     .children-signs::before {
         top: -45px;
         height: 80px;
-    }
-
-
-    .children-signs h2 {
-        margin-bottom: 35px;
-
-        font-size: 2.6rem;
-    }
-
-
-    .children-signs-grid {
-        grid-template-columns: 1fr;
-
-        gap: 15px;
-    }
-
-
-    .children-sign {
-        min-height: 160px;
-
-        padding: 25px;
     }
 
 
@@ -4338,33 +3778,6 @@ REDUÇÃO DE MOVIMENTO
 }
 
 
-/* =========================================================
-   ACESSIBILIDADE
-   ========================================================= */
-
-.children-page a:focus-visible,
-.children-page button:focus-visible {
-    outline: 3px solid var(--child-ochre);
-    outline-offset: 4px;
-}
-
-
-/* =========================================================
-   REDUÇÃO DE MOVIMENTO
-   ========================================================= */
-
-@media (prefers-reduced-motion: reduce) {
-
-    .children-page *,
-    .children-page *::before,
-    .children-page *::after {
-        scroll-behavior: auto !important;
-        transition: none !important;
-        animation: none !important;
-    }
-}
-
-
 /* COMEÇA AQUI 2
 
 /*=========================================================
@@ -4373,121 +3786,12 @@ REDUÇÃO DE MOVIMENTO
 =========================================================*/
 
 
-/*=========================================================
- VARIÁVEIS
-=========================================================*/
-
-:root {
-
-    --linho: #F4EFE8;
-    --aveia: #E8E0D3;
-    --white: #FCFBF8;
-
-    --olive: #7B7F59;
-    --forest: #4A5A49;
-
-    --terracotta: #B86E55;
-    --terracotta-light: #D9A18D;
-
-    --ocre: #C5A35A;
-    --brown: #6E5E4D;
-
-    --text: #43413D;
-    --gray: #8A867E;
-
-    --child-mustard: #F2C14E;
-
-    --shadow:
-        0 20px 45px rgba(0, 0, 0, .08);
-
-    --shadow-hover:
-        0 35px 65px rgba(0, 0, 0, .12);
-
-    --radius: 18px;
-
-    --transition: .45s ease;
-
-    --container: 1200px;
-}
-
-
-
-/*=========================================================
- RESET
-=========================================================*/
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-
-html {
-    scroll-behavior: smooth;
-}
-
-
-body {
-    font-family: 'Inter', sans-serif;
-    background: var(--white);
-    color: var(--text);
-    line-height: 1.6;
-    overflow-x: hidden;
-}
-
-
-img {
-    max-width: 100%;
-    display: block;
-}
-
-
-a {
-    color: inherit;
-    text-decoration: none;
-}
-
-
-button {
-    font: inherit;
-}
-
-
-
-/*=========================================================
- CONTAINER
-=========================================================*/
-
-.container {
-    width: min(
-        calc(100% - 40px),
-        var(--container)
-    );
-
-    margin: 0 auto;
-}
-
-
-
-/*=========================================================
- TIPOGRAFIA
-=========================================================*/
-
-h1,
-h2,
-h3 {
-    font-family:
-        'Cormorant Garamond',
-        serif;
-
-    font-weight: 500;
-}
-
-
-p {
-    color: var(--text);
-}
+/* Reset, container, tipografia base (*, html, body, img, a,
+   button, .container, h1-h4, p) já declarados no início do
+   arquivo — ver seções "RESET", "CONTAINER" e "TIPOGRAFIA"
+   no topo. Os valores usados nesses blocos já refletem os
+   que esta seção definia (mantidos para não alterar o
+   resultado visual atual). */
 
 
 
@@ -5638,12 +4942,6 @@ p {
         font-size: 0.88rem;
     }
 
-
-    .projects-possibilities-number {
-        left: -8px;
-        top: -8px;
-    }
-
 }
 
 
@@ -6607,17 +5905,6 @@ p {
     }
 
 
-    .projects-possibilities-title {
-        margin-bottom: 45px;
-    }
-
-
-    .projects-possibilities-title h2 {
-        font-size:
-            3rem;
-    }
-
-
     .projects-possibilities-list {
         grid-template-columns:
             repeat(2, 1fr);
@@ -6769,19 +6056,6 @@ p {
 
 
 
-/*=========================================================
- ACESSIBILIDADE
-=========================================================*/
-
-:focus-visible {
-    outline:
-        3px solid var(--ocre);
-
-    outline-offset:
-        4px;
-}
-
-
 
 /*=========================================================
  REDUÇÃO DE MOVIMENTO
@@ -6808,4 +6082,403 @@ p {
             1 !important;
     }
 
+}
+
+
+/* =========================================================
+   AJUSTES FINAIS DO SITE
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   TÍTULOS DE SEÇÃO — corrige des-centralização
+   Uma definição posterior de ".section-title h2" (usada pelas
+   páginas internas) zera a margem do h2 sem restaurar o auto
+   horizontal, fazendo o título ficar encostado à esquerda
+   dentro do wrapper centralizado (mais visível em "Como posso
+   ajudar", cujo wrapper é mais largo que o h2). Restaura a
+   centralização em todas as páginas sem mexer no restante.
+--------------------------------------------------------- */
+
+.section-title h2 {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* ---------------------------------------------------------
+   FAQ — respiro entre parágrafos de uma mesma resposta
+--------------------------------------------------------- */
+
+.accordion-content p + p {
+    padding-top: 0;
+}
+
+
+/* ---------------------------------------------------------
+   PÁGINA MULHERES — REDESIGN GERAL
+   (hierarquia, centralização e espaçamento mais consistentes,
+   preservando a identidade orgânica do restante do site)
+--------------------------------------------------------- */
+
+#page-mulheres .women-hero-content {
+    max-width: 720px;
+}
+
+#page-mulheres .hero .section-tag {
+    margin-bottom: 22px;
+}
+
+#page-mulheres .hero h1 {
+    margin-bottom: 22px;
+}
+
+#page-mulheres .hero h2 {
+    max-width: 620px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.women-section-inner {
+    max-width: 980px;
+    margin: 0 auto;
+}
+
+
+/* TÍTULO "COMO POSSO AJUDAR"
+   quebrado em trecho semi-negrito + trecho leve */
+
+.section-title.women-help-title {
+    max-width: 980px;
+    margin: 0 auto 76px;
+    text-align: center;
+}
+
+.section-title.women-help-title span {
+    display: block;
+}
+
+.women-help-heading {
+    margin: 0;
+}
+
+.women-help-heading strong {
+    display: block;
+    font-size: clamp(1.6rem, 3.1vw, 2.5rem);
+    font-weight: 500;
+    line-height: 1.3;
+}
+
+.women-help-heading .women-help-light {
+    display: block;
+    margin-top: 16px;
+    color: var(--brown);
+    font-weight: 300;
+    font-size: clamp(1.05rem, 1.7vw, 1.35rem);
+    line-height: 1.6;
+}
+
+
+/* MOMENTOS EM QUE A PSICOTERAPIA ACOMPANHA */
+
+.women-moments {
+    position: relative;
+    z-index: 2;
+    margin-top: 100px;
+}
+
+.section-tag.women-moments-tag {
+    display: block;
+    max-width: 640px;
+    margin: 0 auto 36px;
+    text-align: left;
+}
+
+.women-moments-track-wrap {
+    position: relative;
+    margin: 0 -4px 44px;
+}
+
+.women-moments-track-wrap::before,
+.women-moments-track-wrap::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 18px;
+    width: 48px;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.women-moments-track-wrap::before {
+    left: 0;
+    background: linear-gradient(90deg, var(--linho), transparent);
+}
+
+.women-moments-track-wrap::after {
+    right: 0;
+    background: linear-gradient(270deg, var(--linho), transparent);
+}
+
+.women-moments-track {
+    display: flex;
+    gap: 24px;
+    padding: 6px 4px 18px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+}
+
+.women-moments-track::-webkit-scrollbar {
+    height: 6px;
+}
+
+.women-moments-track::-webkit-scrollbar-thumb {
+    background: var(--terracotta-light);
+    border-radius: 10px;
+}
+
+.women-moment-card {
+    flex: 0 0 270px;
+    scroll-snap-align: start;
+    display: flex;
+    flex-direction: column;
+    min-height: 200px;
+    padding: 32px 28px;
+    background: var(--white);
+    border: 1px solid rgba(123, 127, 89, .1);
+    border-radius: 24px;
+    box-shadow: var(--shadow);
+    transition: transform .4s ease, box-shadow .4s ease;
+}
+
+.women-moment-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-hover);
+}
+
+.women-moment-card h3 {
+    margin-bottom: 14px;
+    font-size: 1.2rem;
+    line-height: 1.25;
+    color: var(--forest);
+}
+
+.women-moment-card p {
+    margin: 0;
+    font-size: .94rem;
+    line-height: 1.7;
+    color: var(--text);
+}
+
+.women-moments-closing {
+    max-width: 980px;
+    margin: 0 auto;
+    color: var(--brown);
+    font-size: 1.05rem;
+    line-height: 1.8;
+    font-style: italic;
+    text-align: center;
+}
+
+
+/* CAIXA DE ATENDIMENTO PRESENCIAL / ONLINE */
+
+.women-location-box {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 36px;
+    margin: 100px auto 0;
+    padding: 52px 60px;
+    max-width: 880px;
+    text-align: center;
+    background: var(--linho);
+    border-radius: 32px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+}
+
+.women-location-box::before {
+    content: "";
+    position: absolute;
+    width: 220px;
+    height: 220px;
+    right: -110px;
+    bottom: -110px;
+    background: var(--terracotta-light);
+    opacity: .16;
+    border-radius: 45% 55% 35% 65% / 60% 40% 60% 40%;
+    pointer-events: none;
+}
+
+.women-location-text {
+    position: relative;
+    z-index: 2;
+}
+
+.women-location-text h3 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 0;
+    font-size: 1.4rem;
+    color: var(--forest);
+}
+
+.women-location-text h3 i {
+    font-size: 1.05rem;
+    color: var(--terracotta);
+}
+
+.women-location-online {
+    margin: 10px 0 0;
+    color: var(--terracotta);
+    font-size: 1.02rem;
+    font-style: italic;
+}
+
+.women-location-box .btn {
+    position: relative;
+    z-index: 2;
+    flex-shrink: 0;
+}
+
+@media (max-width: 900px) {
+
+    .women-section-inner {
+        max-width: 640px;
+    }
+}
+
+@media (max-width: 700px) {
+
+    .section-title.women-help-title {
+        text-align: center;
+    }
+
+    .section-tag.women-moments-tag,
+    .women-moments-closing {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .women-location-box {
+        flex-direction: column;
+        padding: 42px 30px;
+    }
+
+    .women-location-text h3 {
+        font-size: 1.25rem;
+    }
+
+    .women-moment-card {
+        flex-basis: 240px;
+    }
+}
+
+
+/* ---------------------------------------------------------
+   PÁGINA CRIANÇAS — TRILHA DE SINAIS SEM NÚMEROS
+   (a linha central se realinha ao centro do ícone)
+--------------------------------------------------------- */
+
+.children-signs-trail::before {
+    top: 31px;
+}
+
+.children-trail-top {
+    min-height: 62px;
+}
+
+
+/* ---------------------------------------------------------
+   PÁGINA CRIANÇAS — FAIXA DO PÔR DO SOL
+   Banner de largura total (sem cortes na largura da tela),
+   com a proporção travada na da própria imagem — assim o
+   texto, posicionado em % sobre ela, sempre cai no mesmo
+   lugar (sobre o céu, com o sol livre e inteiro logo abaixo),
+   em qualquer largura de tela.
+--------------------------------------------------------- */
+
+.children-signs {
+    padding-bottom: 0;
+}
+
+.children-signs-highlight {
+    position: relative;
+    width: 100vw;
+    margin: 100px calc(50% - 50vw) 0;
+    aspect-ratio: 2172 / 724;
+    background-image: url("img/por-do-sol-criancas.png");
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+}
+
+.children-signs-highlight-text {
+    position: absolute;
+    top: 9%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70%;
+    max-width: 620px;
+    margin: 0;
+    color: var(--child-blue);
+    font-size: 16px;
+    line-height: 1.6;
+    font-style: italic;
+    text-align: center;
+}
+
+@media (max-width: 900px) {
+
+    .children-signs-highlight {
+        margin-top: 70px;
+    }
+
+    .children-signs-highlight-text {
+        width: 80%;
+        font-size: 12px;
+        line-height: 1.5;
+    }
+}
+
+@media (max-width: 650px) {
+
+    .children-signs-highlight {
+        margin-top: 55px;
+    }
+
+    .children-signs-highlight-text {
+        width: 88%;
+        font-size: 8px;
+        line-height: 1.4;
+    }
+}
+
+
+/* ---------------------------------------------------------
+   RODAPÉ — CRÉDITO DE DESENVOLVIMENTO
+--------------------------------------------------------- */
+
+.footer-credit {
+    margin-top: 8px;
+    color: rgba(247, 243, 238, .55);
+    font-size: .78rem;
+}
+
+.footer-credit a {
+    color: var(--ocre);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    transition: color .3s;
+}
+
+.footer-credit a:hover {
+    color: #fff;
 }
