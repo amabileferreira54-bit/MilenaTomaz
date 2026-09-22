@@ -2813,23 +2813,11 @@ REDUÇÃO DE MOVIMENTO
 
 /* =========================================================
    HERO — CRIANÇAS E ADOLESCENTES
-   Imagem única (título e chamada já desenhados na arte),
-   trocada por tamanho de tela via <picture>. Exibida por
-   inteiro, sem cortes, para nunca perder texto nas bordas.
+   Usa a mesma estrutura .hero (imagem de fundo + parallax)
+   das outras páginas, para padronizar o comportamento de
+   rolagem. Troca de imagem por tamanho de tela é feita via
+   background-image (ver ajuste no fim do arquivo).
 ========================================================= */
-
-.children-hero {
-    position: relative;
-    padding: 0;
-    line-height: 0;
-    background: #E9E1D6;
-}
-
-.children-hero-image {
-    display: block;
-    width: 100%;
-    height: auto;
-}
 
 
 /* =========================================================
@@ -6411,8 +6399,8 @@ REDUÇÃO DE MOVIMENTO
 
 .children-signs-highlight {
     position: relative;
-    width: 100vw;
-    margin: 100px calc(50% - 50vw) 0;
+    width: 100%;
+    margin-top: 100px;
     aspect-ratio: 2172 / 724;
     background-image: url("img/por-do-sol-criancas.png");
     background-size: cover;
@@ -6481,4 +6469,24 @@ REDUÇÃO DE MOVIMENTO
 
 .footer-credit a:hover {
     color: #fff;
+}
+
+
+/* ---------------------------------------------------------
+   PÁGINA CRIANÇAS — HERO PADRONIZADO
+   Reaproveita a estrutura .hero (parallax + overlay) das
+   outras páginas. O overlay aqui é bem mais leve, para manter
+   o tom mais divertido da página; a imagem troca para a
+   versão vertical no celular.
+--------------------------------------------------------- */
+
+.children-hero-overlay {
+    background: rgba(28, 30, 27, .22);
+}
+
+@media (max-width: 650px) {
+
+    .children-hero-photo {
+        background-image: url("img/hero-criancas-mobile.png");
+    }
 }
