@@ -17,6 +17,7 @@ RESET
 
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 body {
@@ -1610,6 +1611,12 @@ CONTEÚDO SOBRE
 TRANSIÇÃO FAQ
 =========================================================*/
 
+.faq {
+
+    overflow: hidden;
+
+}
+
 .faq::before {
 
     content: "";
@@ -1971,6 +1978,8 @@ FOOTER
     padding-top: 80px;
 
     position: relative;
+
+    overflow: hidden;
 
 }
 
