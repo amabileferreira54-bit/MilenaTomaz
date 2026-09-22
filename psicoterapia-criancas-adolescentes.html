@@ -193,22 +193,12 @@
      HERO — CRIANÇAS E ADOLESCENTES
 ========================================================= -->
 
-<section class="children-hero">
+<section class="hero parallax children-hero-photo" aria-label="Apresentação"
+    style="--hero-bg: url('img/hero-criancas-desktop.png');">
 
-    <!-- IMAGEM ÚNICA — título e chamada já desenhados na arte,
-         trocando entre versão desktop e mobile por tamanho de tela -->
-    <picture>
-
-        <source media="(max-width: 650px)" srcset="img/hero-criancas-mobile.png">
-
-        <img
-            src="img/hero-criancas-desktop.png"
-            alt="Psicoterapia para crianças e adolescentes. Atendimento dos 5 aos 17 anos."
-            class="children-hero-image"
-            fetchpriority="high"
-        >
-
-    </picture>
+    <!-- Camada escura sobre a imagem — bem mais leve que nas
+         outras páginas, para manter o clima mais divertido -->
+    <div class="overlay children-hero-overlay"></div>
 
     <h1 class="visually-hidden">
         Psicoterapia para crianças e adolescentes
